@@ -1,0 +1,150 @@
+dataset_a,dataset_b,evidence,n_a,n_b,name_a,name_b
+ds000234,ds000235,readme,5,4,ds000234,ds000235
+ds000236,ds000234,readme,18,5,ds000236,ds000234
+ds000236,ds000235,readme,18,4,ds000236,ds000235
+ds000254,ds000216,readme,13,7,ds000254_R1.0.0,Multiband Multi-Echo Imaging of Simultaneous Oxygenation and
+ds002293,ds002328,name,1,1,FSL open science dev dataset,FSL open science dev dataset
+ds002620,ds002366,age_sex;name;readme,82,34,"Emotion regulation in the Ageing Brain, University of Readin","Emotion regulation in the Ageing Brain, University of Readin"
+ds002685,ds000244,readme,13,12,IBC,ds000244_R1.0.1
+ds002718,ds003645,readme,18,19,Face processing EEG dataset for EEGLAB,Face processing MEEG dataset with HED annotation
+ds003194,ds003195,readme,15,10,Neuroepo multisession,Placebo Neuroepo multisession
+ds003346,ds003037,name,144,53,SUDMEX_TMS: The Mexican dataset of an rTMS clinical trial on,SUDMEX_TMS: The Mexican dataset of an rTMS clinical trial on
+ds003474,ds003478,age_sex,122,122,ProbabilisticSelection,Rest
+ds003506,ds003509,age_sex,56,56,ReinforcementLearning,SimonConflict
+ds003518,ds003509,name,110,56,SimonConflict,SimonConflict
+ds003523,ds003519,name,91,27,VisualWorkingMemory,VisualWorkingMemory
+ds003523,ds005114,age_sex,91,91,VisualWorkingMemory,EEG: DPX Cog Ctl Task in Acute Mild TBI
+ds003703,ds006468,readme,34,24,Frequency Tagging of Syntactic Structure or Lexical Properti,MEG-SCANS - a high quality magneto-encephalography speech da
+ds003844,ds003848,readme,6,6,RESPect,Dataset Clinical Epilepsy iEEG to BIDS - RESPect_longterm_iE
+ds003872,ds003988,name;readme,56,56,The Reading Brain Project L2 Adults,The Reading Brain Project L2 Adults
+ds003877,ds005504,readme,79,68,BrainMorphometry_DiminishedGrowth_BEANstudy_2021,Psychosocial adversity and inhibitory control: an fMRI study
+ds004012,ds004278,readme,30,30,BRAR_NQ,Sustained Neural Representations of Personally Familiar Peop
+ds004024,ds005307,readme,13,7,TMS-EEG-MRI-fMRI-DWI data on paired associative stimulation ,Laser-evoked potentials in the human spinal cord and cortex
+ds004068,ds004386,age_sex,48,48,AutomatedZShimSpinalCord,fc-reliability-spinalcord
+ds004129,ds004130,age_sex,1,1,BIDS Phenotype Segregation Example Dataset,BIDS Phenotype Aggregation Example Dataset
+ds004129,ds004131,age_sex,1,1,BIDS Phenotype Segregation Example Dataset,BIDS Phenotype External Example Dataset
+ds004130,ds004131,age_sex,1,1,BIDS Phenotype Aggregation Example Dataset,BIDS Phenotype External Example Dataset
+ds004152,ds004262,age_sex,21,21,Drum Trainer,Continuous Feedback Processing
+ds004152,ds004264,age_sex,21,21,Drum Trainer,Steer the Ship
+ds004158,ds008507,age_sex,20,19,rest_eye,RetinoMaps
+ds004173,ds004795,age_sex,148,148,Movement-related artefacts (MR-ART) dataset,Simulated motion artifacts based on the (MR-ART) dataset (ht
+ds004262,ds004264,age_sex,21,21,Continuous Feedback Processing,Steer the Ship
+ds004284,ds004024,readme,18,13,eeg-neuroforecasting,TMS-EEG-MRI-fMRI-DWI data on paired associative stimulation 
+ds004284,ds005307,readme,18,7,eeg-neuroforecasting,Laser-evoked potentials in the human spinal cord and cortex
+ds004284,ds006840,readme,18,15,eeg-neuroforecasting,IACKD: Intention Action Conflict EEG-Hand Kinematics Dataset
+ds004444,ds004446,age_sex;readme,30,30,The BMI-HDEEG dataset 1,The BMI-HDEEG dataset 2
+ds004444,ds004447,age_sex;readme,30,22,The BMI-HDEEG dataset 1,The BMI-HDEEG dataset 3
+ds004446,ds004447,age_sex;readme,30,22,The BMI-HDEEG dataset 2,The BMI-HDEEG dataset 3
+ds004448,ds004444,readme,56,30,The BMI-HDEEG dataset 4,The BMI-HDEEG dataset 1
+ds004448,ds004446,readme,56,30,The BMI-HDEEG dataset 4,The BMI-HDEEG dataset 2
+ds004448,ds004447,readme,56,22,The BMI-HDEEG dataset 4,The BMI-HDEEG dataset 3
+ds004484,ds004478,name,20,6,Neural activity induced by sensory stimulation can drive lar,Neural activity induced by sensory stimulation can drive lar
+ds004484,ds004493,name,20,16,Neural activity induced by sensory stimulation can drive lar,Neural activity induced by sensory stimulation can drive lar
+ds004493,ds004478,name,16,6,Neural activity induced by sensory stimulation can drive lar,Neural activity induced by sensory stimulation can drive lar
+ds004504,ds006036,age_sex,88,88,"A dataset of 88 EEG recordings from: Alzheimer's disease, Fr",Dementia_photostimulation_dataset
+ds004561,ds004024,readme,23,13,Illusion of Agency over Electrically-Actuated Movements,TMS-EEG-MRI-fMRI-DWI data on paired associative stimulation 
+ds004561,ds004284,readme,23,18,Illusion of Agency over Electrically-Actuated Movements,eeg-neuroforecasting
+ds004561,ds005307,readme,23,7,Illusion of Agency over Electrically-Actuated Movements,Laser-evoked potentials in the human spinal cord and cortex
+ds004561,ds006840,readme,23,15,Illusion of Agency over Electrically-Actuated Movements,IACKD: Intention Action Conflict EEG-Hand Kinematics Dataset
+ds004561,ds007949,readme,23,22,Illusion of Agency over Electrically-Actuated Movements,Auditory Streaming and Interoception
+ds004595,ds005907,age_sex;name;readme,53,53,EEG: RL Task (3-Armed Bandit) with alcohol cues in hazardous,EEG: RL Task (3-Armed Bandit) with alcohol cues in hazardous
+ds004604,ds005418,name,50,35,Cerebrovascular Reactivity Normative Dataset,Cerebrovascular Reactivity Normative Dataset
+ds004662,ds007661,age_sex,8,8,Denoising task-correlated head motion from motor-task fMRI d,Motor Task Multi-Echo fMRI - fMRIPrep Derivatives
+ds005069,ds005072,readme,1,1,test,test
+ds005126,ds005684,age_sex,35,35,A neuroimaging dataset during sequential color qualia simila,An fMRI dataset during sequential color qualia similarity ju
+ds005131,ds004256,readme,58,53,Evoked Responses to Elevated sounds, 
+ds005363,ds005374,age_sex,43,43,Object recognition in healthy aging (ORHA) - EEG,Object recognition in healthy aging (ORHA) - fMRI
+ds005406,ds004024,readme,29,13,EEG frequency tagging reveals the integration of dissimilar ,TMS-EEG-MRI-fMRI-DWI data on paired associative stimulation 
+ds005406,ds004284,readme,29,18,EEG frequency tagging reveals the integration of dissimilar ,eeg-neuroforecasting
+ds005406,ds004561,readme,29,23,EEG frequency tagging reveals the integration of dissimilar ,Illusion of Agency over Electrically-Actuated Movements
+ds005406,ds005307,readme,29,7,EEG frequency tagging reveals the integration of dissimilar ,Laser-evoked potentials in the human spinal cord and cortex
+ds005406,ds006840,readme,29,15,EEG frequency tagging reveals the integration of dissimilar ,IACKD: Intention Action Conflict EEG-Hand Kinematics Dataset
+ds005406,ds007949,readme,29,22,EEG frequency tagging reveals the integration of dissimilar ,Auditory Streaming and Interoception
+ds005420,ds004024,readme,37,13,Resting state EEG with closed eyes and open eyes in females ,TMS-EEG-MRI-fMRI-DWI data on paired associative stimulation 
+ds005420,ds004284,readme,37,18,Resting state EEG with closed eyes and open eyes in females ,eeg-neuroforecasting
+ds005420,ds004561,readme,37,23,Resting state EEG with closed eyes and open eyes in females ,Illusion of Agency over Electrically-Actuated Movements
+ds005420,ds005307,readme,37,7,Resting state EEG with closed eyes and open eyes in females ,Laser-evoked potentials in the human spinal cord and cortex
+ds005420,ds005406,readme,37,29,Resting state EEG with closed eyes and open eyes in females ,EEG frequency tagging reveals the integration of dissimilar 
+ds005420,ds005857,readme,37,29,Resting state EEG with closed eyes and open eyes in females ,ltpDelayRepFRReadOnly
+ds005420,ds006374,readme,37,36,Resting state EEG with closed eyes and open eyes in females ,Expectation effects on repetition suppression in nociception
+ds005420,ds006386,readme,37,30,Resting state EEG with closed eyes and open eyes in females ,PhysioMotion_Artifact
+ds005420,ds006840,readme,37,15,Resting state EEG with closed eyes and open eyes in females ,IACKD: Intention Action Conflict EEG-Hand Kinematics Dataset
+ds005420,ds007949,readme,37,22,Resting state EEG with closed eyes and open eyes in females ,Auditory Streaming and Interoception
+ds005420,ds008161,readme,37,33,Resting state EEG with closed eyes and open eyes in females ,Auditory-motor EEG (one-channel)
+ds005479,ds003858,name,37,12,Monetary Incentive Delay task,Monetary Incentive Delay task
+ds005581,ds005069,readme,24,1,Integration of overlapping sequences emerges with consolidat,test
+ds005581,ds005072,readme,24,1,Integration of overlapping sequences emerges with consolidat,test
+ds005596,ds005920,name,31,31,A naturalistic fMRI dataset in response to puclic speaking,A naturalistic fMRI dataset in response to puclic speaking
+ds005697,ds005672,name,51,3,PerceiveImagine,PerceiveImagine
+ds005810,ds005811,readme,31,19,NOD-MEG,NOD-EEG
+ds005857,ds004024,readme,29,13,ltpDelayRepFRReadOnly,TMS-EEG-MRI-fMRI-DWI data on paired associative stimulation 
+ds005857,ds004284,readme,29,18,ltpDelayRepFRReadOnly,eeg-neuroforecasting
+ds005857,ds004561,readme,29,23,ltpDelayRepFRReadOnly,Illusion of Agency over Electrically-Actuated Movements
+ds005857,ds005307,readme,29,7,ltpDelayRepFRReadOnly,Laser-evoked potentials in the human spinal cord and cortex
+ds005857,ds005406,readme,29,29,ltpDelayRepFRReadOnly,EEG frequency tagging reveals the integration of dissimilar 
+ds005857,ds006386,readme,29,30,ltpDelayRepFRReadOnly,PhysioMotion_Artifact
+ds005857,ds006840,readme,29,15,ltpDelayRepFRReadOnly,IACKD: Intention Action Conflict EEG-Hand Kinematics Dataset
+ds005857,ds007949,readme,29,22,ltpDelayRepFRReadOnly,Auditory Streaming and Interoception
+ds005857,ds008161,readme,29,33,ltpDelayRepFRReadOnly,Auditory-motor EEG (one-channel)
+ds005863,ds006018,readme,127,127,Cognitive Electrophysiology in Socioeconomic Context in Adul,Cognitive Electrophysiology in Socioeconomic Context in Adul
+ds005866,ds005868,readme,60,48,Flankers-NEAR,Flankers-FAR
+ds005872,ds007338,name,1,1,EEGEyeNet Dataset,EEGEyeNet Dataset
+ds005896,ds005901,name;readme,262,120,Structural and functional MRI dataset from the Adolescent He,Structural and functional MRI dataset from the Adolescent He
+ds005964,ds005963,readme,17,10,FRESH Audio Dataset,FRESH Motor Dataset
+ds006105,ds006108,age_sex;name,75,75,Skewed Gambling Task: Deconstructing neural predictors of ri,Skewed Gambling Task: Deconstructing neural predictors of ri
+ds006222,ds007509,readme,69,69,MultisensoryFlickerHealthyYoungAdults_AllSubjectsRawData,1hrPVTdataset_allSubjects
+ds006265,ds006266,name,20,20,TOAM – Trajectory of a Memory Trace. Human episodic memory 7,TOAM – Trajectory of a Memory Trace. Human episodic memory 7
+ds006374,ds004024,readme,36,13,Expectation effects on repetition suppression in nociception,TMS-EEG-MRI-fMRI-DWI data on paired associative stimulation 
+ds006374,ds004284,readme,36,18,Expectation effects on repetition suppression in nociception,eeg-neuroforecasting
+ds006374,ds004561,readme,36,23,Expectation effects on repetition suppression in nociception,Illusion of Agency over Electrically-Actuated Movements
+ds006374,ds005307,readme,36,7,Expectation effects on repetition suppression in nociception,Laser-evoked potentials in the human spinal cord and cortex
+ds006374,ds005406,readme,36,29,Expectation effects on repetition suppression in nociception,EEG frequency tagging reveals the integration of dissimilar 
+ds006374,ds005857,readme,36,29,Expectation effects on repetition suppression in nociception,ltpDelayRepFRReadOnly
+ds006374,ds006386,readme,36,30,Expectation effects on repetition suppression in nociception,PhysioMotion_Artifact
+ds006374,ds006840,readme,36,15,Expectation effects on repetition suppression in nociception,IACKD: Intention Action Conflict EEG-Hand Kinematics Dataset
+ds006374,ds007949,readme,36,22,Expectation effects on repetition suppression in nociception,Auditory Streaming and Interoception
+ds006374,ds008161,readme,36,33,Expectation effects on repetition suppression in nociception,Auditory-motor EEG (one-channel)
+ds006386,ds004024,readme,30,13,PhysioMotion_Artifact,TMS-EEG-MRI-fMRI-DWI data on paired associative stimulation 
+ds006386,ds004284,readme,30,18,PhysioMotion_Artifact,eeg-neuroforecasting
+ds006386,ds004561,readme,30,23,PhysioMotion_Artifact,Illusion of Agency over Electrically-Actuated Movements
+ds006386,ds005307,readme,30,7,PhysioMotion_Artifact,Laser-evoked potentials in the human spinal cord and cortex
+ds006386,ds005406,readme,30,29,PhysioMotion_Artifact,EEG frequency tagging reveals the integration of dissimilar 
+ds006386,ds006840,readme,30,15,PhysioMotion_Artifact,IACKD: Intention Action Conflict EEG-Hand Kinematics Dataset
+ds006386,ds007949,readme,30,22,PhysioMotion_Artifact,Auditory Streaming and Interoception
+ds006459,ds006460,age_sex,17,17,High-DensityvSparsefNIRS_WordColorStroop_Sparse_Anderson_202,High-DensityvSparsefNIRS_WordColorStroop_HD_Anderson_2025
+ds006554,ds007347,readme,47,5,Social Observation EEG raw data,Sterotactic Focused Ultrasound Mesencephalotomy for the Trea
+ds006648,ds006647,readme,47,4,Poetry Assessment EEG Dataset 1,Poetry EEG Study
+ds006779,ds007402,name,26,0,Penn LEAD: Penn Longitudinal Executive functioning in Adoles,Penn LEAD: Penn Longitudinal Executive functioning in Adoles
+ds006840,ds004024,readme,15,13,IACKD: Intention Action Conflict EEG-Hand Kinematics Dataset,TMS-EEG-MRI-fMRI-DWI data on paired associative stimulation 
+ds006840,ds005307,readme,15,7,IACKD: Intention Action Conflict EEG-Hand Kinematics Dataset,Laser-evoked potentials in the human spinal cord and cortex
+ds006910,ds006234,name,121,119,Auditory Naming,Auditory naming
+ds006914,ds006233,name,110,108,Picture naming,Picture naming
+ds007034,ds007109,age_sex;name;readme,11,11,Associative Learning fMRI 7T Dataset,Associative Learning fMRI 7T Dataset
+ds007118,ds007120,age_sex;readme,65,65,iEEG_comprehensive_HFA_model_part1,iEEG_comprehensive_HFA_model_part2
+ds007119,ds007118,age_sex;readme,103,65,iEEG_comprehensive_HFA_model_part3,iEEG_comprehensive_HFA_model_part1
+ds007119,ds007120,age_sex;readme,103,65,iEEG_comprehensive_HFA_model_part3,iEEG_comprehensive_HFA_model_part2
+ds007169,ds007262,age_sex,18,18,Cognitive Workload 5-level n-back,Cognitive Workload 8 categories of mental arithmetic
+ds007314,ds007315,name;readme,2,2,tACS for Patients with Post-Stroke Anomia,tACS for Patients with Post-Stroke Anomia
+ds007544,ds008557,name,41,40,Naturalistic Social Mind Neuroimaging Database (NSM),Naturalistic Social Mind Neuroimaging Database (NSM)
+ds007647,ds007968,age_sex,40,40,Different Doors,Narrative Reward
+ds007663,ds007648,name,27,22,CrossModal Study,CrossModal Study
+ds007666,ds007667,name,55,55,Grupos Pre and Post bids,Grupos Pre and Post bids
+ds007823,ds008082,name,173,173,A COVID-19 survivors and close contacts EEG dataset,A COVID-19 survivors and close contacts EEG dataset
+ds007864,ds007865,readme,45,24,Neuroepo multisession Phase II and III,Placebo Neuroepo multisession Phase II and III
+ds007895,ds007949,age_sex;name,22,22,Auditory Streaming and Interoception,Auditory Streaming and Interoception
+ds007949,ds004024,readme,22,13,Auditory Streaming and Interoception,TMS-EEG-MRI-fMRI-DWI data on paired associative stimulation 
+ds007949,ds004284,readme,22,18,Auditory Streaming and Interoception,eeg-neuroforecasting
+ds007949,ds005307,readme,22,7,Auditory Streaming and Interoception,Laser-evoked potentials in the human spinal cord and cortex
+ds007949,ds006840,readme,22,15,Auditory Streaming and Interoception,IACKD: Intention Action Conflict EEG-Hand Kinematics Dataset
+ds008092,ds008940,age_sex,77,77,Food-image categorization with consumer EEG (vegetarian vs. ,Dietary identity and the neural categorization of food image
+ds008161,ds004024,readme,33,13,Auditory-motor EEG (one-channel),TMS-EEG-MRI-fMRI-DWI data on paired associative stimulation 
+ds008161,ds004284,readme,33,18,Auditory-motor EEG (one-channel),eeg-neuroforecasting
+ds008161,ds004561,readme,33,23,Auditory-motor EEG (one-channel),Illusion of Agency over Electrically-Actuated Movements
+ds008161,ds005307,readme,33,7,Auditory-motor EEG (one-channel),Laser-evoked potentials in the human spinal cord and cortex
+ds008161,ds005406,readme,33,29,Auditory-motor EEG (one-channel),EEG frequency tagging reveals the integration of dissimilar 
+ds008161,ds006386,readme,33,30,Auditory-motor EEG (one-channel),PhysioMotion_Artifact
+ds008161,ds006840,readme,33,15,Auditory-motor EEG (one-channel),IACKD: Intention Action Conflict EEG-Hand Kinematics Dataset
+ds008161,ds007949,readme,33,22,Auditory-motor EEG (one-channel),Auditory Streaming and Interoception
+ds008462,ds003703,readme,38,34,Drug-Resistant Epilepsy Resting-State MEG-MRI Dataset,Frequency Tagging of Syntactic Structure or Lexical Properti
+ds008462,ds006468,readme,38,24,Drug-Resistant Epilepsy Resting-State MEG-MRI Dataset,MEG-SCANS - a high quality magneto-encephalography speech da
+ds008730,ds007895,readme,104,22,Flavors of Reward Positivity: Testing the Psychometric Prope,Auditory Streaming and Interoception

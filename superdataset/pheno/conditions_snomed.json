@@ -1,0 +1,532 @@
+{
+ "HEALTHY": {
+  "snomed_code": "102512003",
+  "snomed_term": "Well adult",
+  "snomed_match": "broader (also used for children/adolescents)"
+ },
+ "PD": {
+  "snomed_code": "49049000",
+  "snomed_term": "Parkinson's disease",
+  "snomed_match": "exact"
+ },
+ "EPILEPSY": {
+  "snomed_code": "84757009",
+  "snomed_term": "Epilepsy",
+  "snomed_match": "exact"
+ },
+ "AD": {
+  "snomed_code": "26929004",
+  "snomed_term": "Alzheimer's disease",
+  "snomed_match": "exact"
+ },
+ "FTD": {
+  "snomed_code": "230270009",
+  "snomed_term": "Frontotemporal dementia",
+  "snomed_match": "exact"
+ },
+ "MCI": {
+  "snomed_code": "386805003",
+  "snomed_term": "Mild neurocognitive disorder",
+  "snomed_match": "exact (synonym: mild cognitive impairment)"
+ },
+ "DEMENTIA": {
+  "snomed_code": "52448006",
+  "snomed_term": "Dementia",
+  "snomed_match": "exact"
+ },
+ "SCZ": {
+  "snomed_code": "58214004",
+  "snomed_term": "Schizophrenia",
+  "snomed_match": "broader (spectrum includes schizoaffective)"
+ },
+ "FEP": {
+  "snomed_code": "69322001",
+  "snomed_term": "Psychotic disorder",
+  "snomed_match": "broader (no first-episode concept)"
+ },
+ "TBI": {
+  "snomed_code": "127295002",
+  "snomed_term": "Traumatic brain injury",
+  "snomed_match": "exact (mild cases: 110030002 Concussion injury of brain)"
+ },
+ "COVID19": {
+  "snomed_code": "840539006",
+  "snomed_term": "COVID-19",
+  "snomed_match": "exact (history of infection)"
+ },
+ "POST_COVID": {
+  "snomed_code": "1119304009",
+  "snomed_term": "Chronic post-COVID-19 syndrome",
+  "snomed_match": "exact"
+ },
+ "STROKE": {
+  "snomed_code": "230690007",
+  "snomed_term": "Cerebrovascular accident",
+  "snomed_match": "exact"
+ },
+ "AUD": {
+  "snomed_code": "1336085007",
+  "snomed_term": "Disorder due to alcohol use",
+  "snomed_match": "exact"
+ },
+ "HAZARDOUS_DRINKING": {
+  "snomed_code": "86933000",
+  "snomed_term": "Heavy drinker",
+  "snomed_match": "exact (finding)"
+ },
+ "LEARNING_DISORDER": {
+  "snomed_code": "161129001",
+  "snomed_term": "Learning difficulties",
+  "snomed_match": "exact (finding)"
+ },
+ "DEAF": {
+  "snomed_code": "15188001",
+  "snomed_term": "Hearing loss",
+  "snomed_match": "broader"
+ },
+ "CLN3": {
+  "snomed_code": "61663001",
+  "snomed_term": "Juvenile neuronal ceroid lipofuscinosis",
+  "snomed_match": "exact"
+ },
+ "SUBCLIN_DEPRESSION": {
+  "snomed_code": "394924000",
+  "snomed_term": "Symptoms of depression",
+  "snomed_match": "exact (finding, not a diagnosis)"
+ },
+ "BLINDNESS": {
+  "snomed_code": "193709009",
+  "snomed_term": "Bilateral acquired blindness of eyes",
+  "snomed_match": "approximate (congenital blindness possible)"
+ },
+ "SSPI": {
+  "snomed_code": "86044005",
+  "snomed_term": "Amyotrophic lateral sclerosis",
+  "snomed_match": "partial (only some participants have ALS)"
+ },
+ "ZAN": {
+  "snomed_code": "2177002",
+  "snomed_term": "Postherpetic neuralgia",
+  "snomed_match": "approximate (zoster-associated neuralgia also includes acute phase)"
+ },
+ "AMPUTATION": {
+  "snomed_code": "735928001",
+  "snomed_term": "Acquired absence of entire limb",
+  "snomed_match": "approximate"
+ },
+ "BURN": {
+  "snomed_code": "284196006",
+  "snomed_term": "Burn of skin",
+  "snomed_match": "exact"
+ },
+ "ORTHOPEDIC": {
+  "snomed_code": "928000",
+  "snomed_term": "Disorder of musculoskeletal system",
+  "snomed_match": "broader"
+ },
+ "PSEN1_CARRIER": {
+  "snomed_code": "230265002",
+  "snomed_term": "Familial Alzheimer's disease of early onset",
+  "snomed_match": "approximate (asymptomatic mutation carriers)"
+ },
+ "ICU": {
+  "snomed_code": null,
+  "snomed_term": null,
+  "snomed_match": "no suitable concept (critical illness is a care setting)"
+ },
+ "PROCEDURE_PATIENT": {
+  "snomed_code": null,
+  "snomed_term": null,
+  "snomed_match": "no suitable concept (surgical/anaesthesia context)"
+ },
+ "OBESITY": {
+  "snomed_code": "414916001",
+  "snomed_term": "Obesity",
+  "snomed_match": "exact"
+ },
+ "MISOPHONIA": {
+  "snomed_code": "1290516000",
+  "snomed_term": "Misophonia",
+  "snomed_match": "exact (no per-participant labels)"
+ },
+ "CANCER_PAIN": {
+  "snomed_code": "735935009",
+  "snomed_term": "Chronic pain due to malignant neoplastic disease",
+  "snomed_match": "exact"
+ },
+ "MIXED_COMMUNITY": {
+  "snomed_code": null,
+  "snomed_term": null,
+  "snomed_match": "not a single condition"
+ },
+ "MDD": {
+  "snomed_code": "370143000",
+  "snomed_term": "Major depressive disorder",
+  "snomed_match": "exact"
+ },
+ "DEPRESSION": {
+  "snomed_code": "35489007",
+  "snomed_term": "Depressive disorder",
+  "snomed_match": "exact"
+ },
+ "DYSTHYMIA": {
+  "snomed_code": "78667006",
+  "snomed_term": "Dysthymia",
+  "snomed_match": "exact"
+ },
+ "BIPOLAR": {
+  "snomed_code": "13746004",
+  "snomed_term": "Bipolar disorder",
+  "snomed_match": "exact"
+ },
+ "ADHD": {
+  "snomed_code": "406506008",
+  "snomed_term": "Attention deficit hyperactivity disorder",
+  "snomed_match": "exact"
+ },
+ "ASD": {
+  "snomed_code": "35919005",
+  "snomed_term": "Autism spectrum disorder",
+  "snomed_match": "exact"
+ },
+ "ANXIETY": {
+  "snomed_code": "197480006",
+  "snomed_term": "Anxiety disorder",
+  "snomed_match": "exact"
+ },
+ "PANIC": {
+  "snomed_code": "371631005",
+  "snomed_term": "Panic disorder",
+  "snomed_match": "exact"
+ },
+ "SOCIAL_ANXIETY": {
+  "snomed_code": "25501002",
+  "snomed_term": "Social phobia",
+  "snomed_match": "exact"
+ },
+ "GAD": {
+  "snomed_code": "21897009",
+  "snomed_term": "Generalized anxiety disorder",
+  "snomed_match": "exact"
+ },
+ "PTSD": {
+  "snomed_code": "47505003",
+  "snomed_term": "Post-traumatic stress disorder",
+  "snomed_match": "exact"
+ },
+ "OCD": {
+  "snomed_code": "191736004",
+  "snomed_term": "Obsessive-compulsive disorder",
+  "snomed_match": "exact"
+ },
+ "BPD": {
+  "snomed_code": "20010003",
+  "snomed_term": "Borderline personality disorder",
+  "snomed_match": "exact"
+ },
+ "IRRITABILITY": {
+  "snomed_code": "55929007",
+  "snomed_term": "Feeling irritable",
+  "snomed_match": "approximate"
+ },
+ "MOOD_NOS": {
+  "snomed_code": "46206005",
+  "snomed_term": "Mood disorder",
+  "snomed_match": "broader"
+ },
+ "CHR_PSYCHOSIS": {
+  "snomed_code": "247804008",
+  "snomed_term": "Schizophrenic prodrome",
+  "snomed_match": "approximate"
+ },
+ "PSYCHOSIS": {
+  "snomed_code": "69322001",
+  "snomed_term": "Psychotic disorder",
+  "snomed_match": "exact"
+ },
+ "SUD": {
+  "snomed_code": "1306691007",
+  "snomed_term": "Substance use disorder",
+  "snomed_match": "exact"
+ },
+ "CUD": {
+  "snomed_code": "1336231000",
+  "snomed_term": "Cocaine use disorder",
+  "snomed_match": "exact"
+ },
+ "CANNABIS_UD": {
+  "snomed_code": "1336200007",
+  "snomed_term": "Cannabis use disorder",
+  "snomed_match": "approximate"
+ },
+ "NICOTINE_DEP": {
+  "snomed_code": "56294008",
+  "snomed_term": "Nicotine dependence",
+  "snomed_match": "approximate"
+ },
+ "GAMBLING": {
+  "snomed_code": "18085000",
+  "snomed_term": "Compulsive gambling",
+  "snomed_match": "exact"
+ },
+ "ANOREXIA": {
+  "snomed_code": "56882008",
+  "snomed_term": "Anorexia nervosa",
+  "snomed_match": "exact"
+ },
+ "FIBROMYALGIA": {
+  "snomed_code": "203082005",
+  "snomed_term": "Fibromyalgia",
+  "snomed_match": "exact"
+ },
+ "DCM": {
+  "snomed_code": "202664003",
+  "snomed_term": "Cervical myelopathy",
+  "snomed_match": "broader"
+ },
+ "CHRONIC_LBP": {
+  "snomed_code": "278860009",
+  "snomed_term": "Chronic low back pain",
+  "snomed_match": "exact"
+ },
+ "KNEE_OA": {
+  "snomed_code": "239873007",
+  "snomed_term": "Osteoarthritis of knee",
+  "snomed_match": "exact"
+ },
+ "MYOFASCIAL_PAIN": {
+  "snomed_code": "726531007",
+  "snomed_term": "Myofascial pain syndrome",
+  "snomed_match": "broader"
+ },
+ "TRIGEMINAL_NEURALGIA": {
+  "snomed_code": "31681005",
+  "snomed_term": "Trigeminal neuralgia",
+  "snomed_match": "exact"
+ },
+ "GLIOBLASTOMA": {
+  "snomed_code": "393563007",
+  "snomed_term": "Glioblastoma multiforme",
+  "snomed_match": "exact"
+ },
+ "BRAIN_TUMOR": {
+  "snomed_code": "126952004",
+  "snomed_term": "Neoplasm of brain",
+  "snomed_match": "broader"
+ },
+ "ANEURYSM": {
+  "snomed_code": "128609009",
+  "snomed_term": "Intracranial aneurysm",
+  "snomed_match": "exact"
+ },
+ "FOCAL_LESION": {
+  "snomed_code": "1356879005",
+  "snomed_term": "Localized lesion of brain",
+  "snomed_match": "broader"
+ },
+ "STROKE_WORKUP": {
+  "snomed_code": "",
+  "snomed_term": "",
+  "snomed_match": "no code"
+ },
+ "DYSTONIA": {
+  "snomed_code": "15802004",
+  "snomed_term": "Dystonia",
+  "snomed_match": "broader"
+ },
+ "DYSLEXIA": {
+  "snomed_code": "59770006",
+  "snomed_term": "Dyslexia",
+  "snomed_match": "exact"
+ },
+ "DYSCALCULIA": {
+  "snomed_code": "55640002",
+  "snomed_term": "Dyscalculia",
+  "snomed_match": "exact"
+ },
+ "PROSOPAGNOSIA": {
+  "snomed_code": "18358003",
+  "snomed_term": "Prosopagnosia",
+  "snomed_match": "exact"
+ },
+ "SYNESTHESIA": {
+  "snomed_code": "8488006",
+  "snomed_term": "Synesthesia",
+  "snomed_match": "exact"
+ },
+ "CAD": {
+  "snomed_code": "53741008",
+  "snomed_term": "Coronary arteriosclerosis",
+  "snomed_match": "exact"
+ },
+ "PERIPHERAL_NERVE_INJURY": {
+  "snomed_code": "73590005",
+  "snomed_term": "Injury of peripheral nerve",
+  "snomed_match": "broader"
+ },
+ "NEUROSURGICAL": {
+  "snomed_code": "",
+  "snomed_term": "",
+  "snomed_match": "no code"
+ },
+ "HEARING_LOSS": {
+  "snomed_code": "15188001",
+  "snomed_term": "Hearing loss",
+  "snomed_match": "exact"
+ },
+ "T1D": {
+  "snomed_code": "46635009",
+  "snomed_term": "Type 1 diabetes mellitus",
+  "snomed_match": "exact"
+ },
+ "TINNITUS": {
+  "snomed_code": "60862001",
+  "snomed_term": "Tinnitus",
+  "snomed_match": "exact"
+ },
+ "GLAUCOMA": {
+  "snomed_code": "23986001",
+  "snomed_term": "Glaucoma",
+  "snomed_match": "exact"
+ },
+ "PROLONGED_GRIEF": {
+  "snomed_code": "723914003",
+  "snomed_term": "Prolonged grief disorder",
+  "snomed_match": "exact"
+ },
+ "MND": {
+  "snomed_code": "37340000",
+  "snomed_term": "Motor neuron disease",
+  "snomed_match": "exact"
+ },
+ "MENINGIOMA": {
+  "snomed_code": "393566004",
+  "snomed_term": "Meningioma",
+  "snomed_match": "exact"
+ },
+ "PITUITARY_ADENOMA": {
+  "snomed_code": "254956000",
+  "snomed_term": "Pituitary adenoma",
+  "snomed_match": "exact"
+ },
+ "SPECIFIC_PHOBIA": {
+  "snomed_code": "54587008",
+  "snomed_term": "Simple phobia",
+  "snomed_match": "exact"
+ },
+ "GLIOMA": {
+  "snomed_code": "393564001",
+  "snomed_term": "Glioma",
+  "snomed_match": "broader"
+ },
+ "AMBLYOPIA": {
+  "snomed_code": "387742006",
+  "snomed_term": "Amblyopia",
+  "snomed_match": "exact"
+ },
+ "FRAGILE_X": {
+  "snomed_code": "613003",
+  "snomed_term": "Fragile X syndrome",
+  "snomed_match": "exact"
+ },
+ "MS": {
+  "snomed_code": "24700007",
+  "snomed_term": "Multiple sclerosis",
+  "snomed_match": "exact"
+ },
+ "SCA": {
+  "snomed_code": "715751004",
+  "snomed_term": "Spinocerebellar ataxia type 2",
+  "snomed_match": "exact"
+ },
+ "CHRONIC_PAIN": {
+  "snomed_code": "82423001",
+  "snomed_term": "Chronic pain",
+  "snomed_match": "exact"
+ },
+ "OB_AGENESIS": {
+  "snomed_code": "771147003",
+  "snomed_term": "Isolated arhinencephaly",
+  "snomed_match": "approximate"
+ },
+ "BRAIN_ABSCESS": {
+  "snomed_code": "441806004",
+  "snomed_term": "Abscess of brain",
+  "snomed_match": "exact"
+ },
+ "CORTICAL_MALFORMATION": {
+  "snomed_code": "1372773002",
+  "snomed_term": "Congenital malformation of cortical development",
+  "snomed_match": "broader"
+ },
+ "APHANTASIA": {
+  "snomed_code": "",
+  "snomed_term": "",
+  "snomed_match": "no code"
+ },
+ "NF1": {
+  "snomed_code": "92824003",
+  "snomed_term": "Neurofibromatosis type 1",
+  "snomed_match": "exact"
+ },
+ "ESSENTIAL_TREMOR": {
+  "snomed_code": "609558009",
+  "snomed_term": "Essential tremor",
+  "snomed_match": "exact"
+ },
+ "NEUROPATHIC_PAIN": {
+  "snomed_code": "247398009",
+  "snomed_term": "Neuropathic pain",
+  "snomed_match": "exact"
+ },
+ "HEMISPHERECTOMY": {
+  "snomed_code": "14247003",
+  "snomed_term": "Cerebral hemispherectomy (procedure)",
+  "snomed_match": "approximate"
+ },
+ "PROSOPOMETAMORPHOPSIA": {
+  "snomed_code": "42134006",
+  "snomed_term": "Metamorphopsia",
+  "snomed_match": "broader"
+ },
+ "TOF": {
+  "snomed_code": "86299006",
+  "snomed_term": "Tetralogy of Fallot",
+  "snomed_match": "exact"
+ },
+ "DMDD": {
+  "snomed_code": "715924009",
+  "snomed_term": "Disruptive mood dysregulation disorder",
+  "snomed_match": "exact"
+ },
+ "ODD": {
+  "snomed_code": "18941000",
+  "snomed_term": "Oppositional defiant disorder",
+  "snomed_match": "exact"
+ },
+ "CONDUCT": {
+  "snomed_code": "430909002",
+  "snomed_term": "Conduct disorder",
+  "snomed_match": "exact"
+ },
+ "TIC": {
+  "snomed_code": "568005",
+  "snomed_term": "Tic disorder",
+  "snomed_match": "exact"
+ },
+ "SEPARATION_ANXIETY": {
+  "snomed_code": "126943008",
+  "snomed_term": "Separation anxiety",
+  "snomed_match": "exact"
+ },
+ "TRANSDIAGNOSTIC": {
+  "snomed_code": "74732009",
+  "snomed_term": "Mental disorder",
+  "snomed_match": "broader"
+ },
+ "UNRESOLVED": {
+  "snomed_code": "",
+  "snomed_term": "",
+  "snomed_match": "no code"
+ }
+}

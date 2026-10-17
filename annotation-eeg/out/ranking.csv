@@ -1,0 +1,35 @@
+condition,label,unique_people_min,unique_people_max,with_controls_min,with_controls_max,independent_groups,cohorts,datasets,snomed_code
+PD,Parkinson's disease,406,789,361,635,5,9,16,49049000
+ICU,Critically ill patient (intensive care),180,180,0,0,1,1,1,
+EPILEPSY,Epilepsy,170,170,0,0,3,3,3,84757009
+COVID19,COVID-19 (post-infection),124,124,87,87,2,2,2,840539006
+FEP,First-episode psychosis,81,81,81,81,2,2,2,69322001
+LEARNING_DISORDER,Specific learning disorder,76,76,0,0,1,1,1,161129001
+TBI,Traumatic brain injury,69,126,69,126,1,2,3,127295002
+DEAF,Deafness,62,62,62,62,2,2,4,15188001
+POST_COVID,Post-COVID-19 condition,60,60,0,0,1,1,1,1119304009
+AD,Alzheimer's disease,53,53,53,53,2,2,3,26929004
+SUBCLIN_DEPRESSION,"Elevated depressive symptoms (non-diagnosed, questionnaire-defined)",46,46,46,46,1,1,2,394924000
+STROKE,Stroke,37,37,35,35,2,2,2,230690007
+SCZ,Schizophrenia spectrum disorder,36,36,36,36,2,2,3,58214004
+CLN3,CLN3 disease (juvenile Batten disease),32,32,32,32,1,1,1,61663001
+ZAN,Zoster-associated neuralgia,32,32,32,32,1,1,1,2177002
+AUD,Alcohol use disorder,30,30,30,30,1,1,1,1336085007
+OBESITY,Obesity,29,29,29,29,1,1,2,414916001
+HAZARDOUS_DRINKING,"Hazardous / heavy drinking (community sample, not diagnosed AUD)",28,28,28,28,1,1,2,86933000
+PSEN1_CARRIER,Asymptomatic PSEN1-E280A carrier (autosomal dominant Alzheimer's disease risk),27,27,27,27,1,1,1,230265002
+PROCEDURE_PATIENT,Patient undergoing surgery or anaesthesia (intraoperative recording),26,26,0,0,2,2,2,
+FTD,Frontotemporal dementia,23,23,23,23,1,1,2,230270009
+AMPUTATION,Limb amputation (with or without phantom limb pain),19,19,19,19,1,1,1,735928001
+DEMENTIA,Dementia (unspecified type),13,13,0,0,1,1,1,52448006
+BLINDNESS,Blindness,11,11,0,0,1,1,1,193709009
+BURN,Burn injury (intensive care),9,9,0,0,1,1,1,284196006
+ORTHOPEDIC,Orthopaedic impairment,7,7,0,0,1,1,1,928000
+MCI,Mild cognitive impairment,6,6,6,6,1,1,1,386805003
+CANCER_PAIN,Cancer pain (head and neck),5,5,0,0,1,1,1,735935009
+SSPI,Severe speech and physical impairment (incl. ALS),5,5,0,0,1,1,1,86044005
+PRESUMED_HEALTHY,No clinical label (non-clinical study),9306,9306,,,185,185,187,
+HEALTHY,Healthy participant,9305,9459,,,195,198,227,102512003
+MIXED_COMMUNITY,Community sample with mixed or dimensional clinical status (diagnoses not shared),3118,3118,,,12,12,12,
+NOT_REPORTED,Clinical status not reported,241,241,,,5,5,5,
+PHANTOM,"Phantom head (non-biological, excluded)",1,1,,,1,1,1,

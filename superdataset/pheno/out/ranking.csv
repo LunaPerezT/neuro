@@ -1,0 +1,98 @@
+condition,label,people_min,people_max,datasets,plus_unresolved_published,MRI_min,MRI_max,fMRI_min,fMRI_max,dMRI_min,dMRI_max,EEG_min,EEG_max,MEG_min,MEG_max,iEEG_min,iEEG_max,PET_min,PET_max,ASL_min,ASL_max,fNIRS_min,fNIRS_max,multimodal_2plus_max
+EPILEPSY,Epilepsy,1673,2432,62,442,350,370,87,87,0,0,170,170,3,3,1078,1670,24,24,0,0,0,0,33
+STROKE,Stroke,1557,1557,9,0,1472,1472,250,250,1325,1325,72,72,0,0,0,0,0,0,0,0,13,13,214
+PD,Parkinson's disease,646,1029,25,0,220,220,179,179,0,0,406,789,20,20,0,0,0,0,0,0,0,0,0
+TRANSDIAGNOSTIC,"Psychiatric patient, mixed diagnoses (transdiagnostic sample)",645,645,5,0,643,643,644,644,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+STROKE_WORKUP,Evaluated for suspected acute stroke (no acute ischaemic stroke recorded),609,609,1,0,609,609,0,0,609,609,0,0,0,0,0,0,0,0,0,0,0,0,0
+GLIOBLASTOMA,Glioblastoma,381,381,3,0,381,381,0,0,18,18,0,0,0,0,0,0,0,0,0,0,0,0,0
+ADHD,Attention deficit hyperactivity disorder,258,263,10,0,256,261,221,226,106,106,0,0,0,0,0,0,0,0,24,24,0,0,70
+TRIGEMINAL_NEURALGIA,Trigeminal neuralgia,238,238,1,0,238,238,232,232,231,231,0,0,0,0,0,0,0,0,0,0,0,0,227
+ANEURYSM,Intracranial aneurysm,220,220,2,0,220,220,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+FOCAL_LESION,Chronic focal brain lesion (mixed aetiology),204,204,1,0,204,204,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+SCZ,Schizophrenia spectrum disorder,195,195,7,0,112,112,159,159,49,49,36,36,0,0,0,0,0,0,0,0,0,0,49
+ANXIETY,Anxiety disorder,194,197,8,0,194,197,191,194,10,10,0,0,0,0,0,0,0,0,8,8,0,0,7
+TBI,Traumatic brain injury,187,187,6,0,61,61,61,61,0,0,126,126,0,0,0,0,0,0,0,0,0,0,0
+ICU,Critically ill patient (intensive care),180,180,1,0,0,0,0,0,0,0,180,180,0,0,0,0,0,0,0,0,0,0,0
+ASD,Autism spectrum disorder,172,223,6,0,106,106,71,71,31,31,66,117,35,35,0,0,0,0,0,0,0,0,31
+MDD,Major depressive disorder,157,186,9,0,157,186,111,111,55,55,8,8,22,22,0,0,0,0,0,0,0,0,55
+CHRONIC_LBP,Chronic low back pain,140,140,3,0,140,140,52,52,27,27,0,0,0,0,0,0,113,113,0,0,0,0,52
+IRRITABILITY,Clinically significant irritability (youth),136,136,1,0,136,136,136,136,101,101,0,0,0,0,0,0,0,0,126,126,0,0,101
+POST_COVID,Post-COVID-19 condition,133,133,2,0,73,73,70,70,72,72,60,60,0,0,0,0,0,0,0,0,0,0,69
+BRAIN_TUMOR,Brain tumour (mixed types),129,133,8,0,69,73,67,71,27,27,0,0,0,0,10,10,0,0,0,0,0,0,25
+COVID19,COVID-19 (post-infection),124,124,2,0,0,0,0,0,0,0,124,124,0,0,0,0,0,0,0,0,0,0,0
+AD,Alzheimer's disease,110,110,6,0,57,57,1,1,1,1,53,53,0,0,0,0,1,1,0,0,0,0,1
+SYNESTHESIA,Synaesthesia (non-clinical trait),102,102,1,0,102,102,102,102,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+DYSLEXIA,Developmental dyslexia,99,99,4,0,99,99,99,99,59,59,0,0,0,0,0,0,0,0,0,0,0,0,59
+CHR_PSYCHOSIS,Clinical high risk for psychosis (prodromal),93,93,3,0,93,93,92,92,72,72,0,0,0,0,0,0,0,0,67,67,0,0,72
+KNEE_OA,Knee osteoarthritis,93,93,2,0,93,93,56,56,0,0,0,0,0,0,0,0,37,37,0,0,0,0,0
+LEARNING_DISORDER,Specific learning disorder,92,92,2,0,16,16,16,16,0,0,76,76,0,0,0,0,0,0,0,0,0,0,0
+FEP,First-episode psychosis,81,81,2,0,0,0,0,0,0,0,81,81,0,0,0,0,0,0,0,0,0,0,0
+NEUROSURGICAL,"Neurosurgical patient (epilepsy or brain tumour, unspecified)",79,79,2,0,79,79,79,79,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+BIPOLAR,Bipolar disorder,74,74,5,0,74,74,68,68,53,53,0,0,0,0,0,0,0,0,1,1,0,0,53
+CUD,Cocaine use disorder,74,127,2,0,74,127,72,125,69,69,0,0,0,0,0,0,0,0,0,0,0,0,69
+DYSTONIA,Focal dystonia,67,67,2,0,67,67,67,67,54,54,0,0,0,0,0,0,0,0,0,0,0,0,54
+DEAF,Deafness,62,62,4,0,0,0,0,0,0,0,62,62,0,0,0,0,0,0,0,0,0,0,0
+MENINGIOMA,Meningioma,61,61,2,0,61,61,56,56,58,58,0,0,0,0,0,0,0,0,0,0,0,0,56
+MCI,Mild cognitive impairment,60,60,3,0,54,54,49,49,40,40,6,6,0,0,0,0,5,5,0,0,0,0,40
+MND,Motor neuron disease,60,60,2,0,55,55,55,55,54,54,0,0,0,0,0,0,0,0,0,0,0,0,54
+OCD,Obsessive-compulsive disorder,56,56,2,0,56,56,53,53,44,44,2,2,0,0,0,0,0,0,0,0,0,0,44
+BPD,Borderline personality disorder,55,55,2,0,55,55,55,55,35,35,0,0,0,0,0,0,0,0,33,33,0,0,35
+FIBROMYALGIA,Fibromyalgia,53,53,3,33,23,23,53,53,20,20,0,0,0,0,0,0,0,0,0,0,0,0,20
+DEPRESSION,"Depressive disorder (episode, unspecified severity/type)",51,88,3,0,51,88,51,88,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+PITUITARY_ADENOMA,Pituitary adenoma,50,50,1,0,50,50,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+AMPUTATION,Limb amputation (with or without phantom limb pain),49,49,2,0,29,29,29,29,0,0,19,19,0,0,0,0,0,0,0,0,0,0,0
+PROSOPAGNOSIA,Developmental prosopagnosia,49,49,3,0,49,49,49,49,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+SPECIFIC_PHOBIA,Specific phobia (spiders),49,49,1,0,49,49,49,49,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+TINNITUS,Tinnitus,48,48,2,0,19,19,19,19,0,0,0,0,0,0,0,0,0,0,0,0,29,29,0
+SUBCLIN_DEPRESSION,"Elevated depressive symptoms (non-diagnosed, questionnaire-defined)",46,46,2,0,0,0,0,0,0,0,46,46,0,0,0,0,0,0,0,0,0,0,0
+CAD,Coronary artery disease,46,46,1,0,46,46,0,0,0,0,0,0,0,0,0,0,0,0,45,45,0,0,0
+MYOFASCIAL_PAIN,Masticatory myofascial pain syndrome,42,42,1,0,42,42,0,0,42,42,0,0,0,0,0,0,0,0,0,0,0,0,0
+DMDD,Disruptive mood dysregulation disorder,39,39,2,0,39,39,1,1,38,38,0,0,0,0,0,0,0,0,0,0,0,0,0
+GLAUCOMA,Glaucoma,37,37,2,0,37,37,0,0,37,37,0,0,0,0,0,0,0,0,0,0,0,0,0
+GLIOMA,Glioma (lower grade / non-GBM),34,34,2,0,34,34,0,0,34,34,0,0,0,0,0,0,0,0,0,0,0,0,0
+AMBLYOPIA,Amblyopia,34,34,1,0,34,34,34,34,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+CLN3,CLN3 disease (juvenile Batten disease),32,32,1,0,0,0,0,0,0,0,32,32,0,0,0,0,0,0,0,0,0,0,0
+ZAN,Zoster-associated neuralgia,32,32,1,0,26,26,27,27,0,0,27,27,0,0,0,0,0,0,0,0,0,0,22
+T1D,Type 1 diabetes mellitus,31,31,1,0,31,31,31,31,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+DYSCALCULIA,Developmental dyscalculia (math learning difficulty),30,30,1,0,30,30,30,30,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+PROLONGED_GRIEF,Prolonged grief disorder,30,30,1,0,30,30,30,30,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+AUD,Alcohol use disorder,30,30,1,0,0,0,0,0,0,0,30,30,0,0,0,0,0,0,0,0,0,0,0
+TOF,Tetralogy of Fallot (congenital heart disease),30,30,1,0,30,30,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OBESITY,Obesity,29,29,2,0,0,0,0,0,0,0,29,29,0,0,0,0,0,0,0,0,0,0,0
+HAZARDOUS_DRINKING,"Hazardous / heavy drinking (community sample, not diagnosed AUD)",28,28,2,0,0,0,0,0,0,0,28,28,0,0,0,0,0,0,0,0,0,0,0
+PTSD,Post-traumatic stress disorder,27,27,1,0,26,26,27,27,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+PSEN1_CARRIER,Asymptomatic PSEN1-E280A carrier (autosomal dominant Alzheimer's disease risk),27,27,1,0,0,0,0,0,0,0,27,27,0,0,0,0,0,0,0,0,0,0,0
+PROCEDURE_PATIENT,Patient undergoing surgery or anaesthesia (intraoperative recording),26,26,2,0,0,0,0,0,0,0,26,26,0,0,0,0,0,0,0,0,8,8,0
+PERIPHERAL_NERVE_INJURY,Peripheral nerve injury (upper limb),25,25,1,0,25,25,25,25,25,25,0,0,0,0,0,0,0,0,0,0,0,0,25
+FTD,Frontotemporal dementia,23,23,2,0,0,0,0,0,0,0,23,23,0,0,0,0,0,0,0,0,0,0,0
+NICOTINE_DEP,Tobacco/nicotine dependence (smoker),22,22,1,0,0,0,22,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+MS,Multiple sclerosis,21,21,2,0,21,21,20,20,21,21,0,0,0,0,0,0,0,0,19,19,0,0,20
+CANNABIS_UD,Cannabis use disorder,20,20,1,0,20,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+CHRONIC_PAIN,Chronic pain (mixed/unspecified),20,20,1,112,20,20,0,0,19,19,0,0,0,0,0,0,0,0,0,0,0,0,0
+BLINDNESS,Blindness,19,19,2,0,8,8,8,8,0,0,11,11,0,0,0,0,0,0,0,0,0,0,0
+SEPARATION_ANXIETY,Separation anxiety disorder,18,19,2,0,18,19,18,19,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+DCM,Degenerative cervical myelopathy,17,17,1,0,0,0,17,17,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+GAD,Generalized anxiety disorder,17,19,3,0,17,19,17,19,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+ESSENTIAL_TREMOR,Essential tremor,17,17,2,0,17,17,0,0,12,12,0,0,0,0,0,0,0,0,0,0,0,0,0
+PANIC,Panic disorder,14,15,3,0,13,14,14,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+DYSTHYMIA,Persistent depressive disorder (dysthymia),13,13,1,0,13,13,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+DEMENTIA,Dementia (unspecified type),13,13,1,0,0,0,0,0,0,0,13,13,0,0,0,0,0,0,0,0,0,0,0
+FRAGILE_X,Fragile X syndrome,12,12,1,0,12,12,0,0,0,0,0,0,0,0,0,0,12,12,0,0,0,0,0
+SCA,Spinocerebellar ataxia,9,9,1,0,9,9,0,0,9,9,0,0,0,0,0,0,0,0,0,0,0,0,0
+BURN,Burn injury (intensive care),9,9,1,0,0,0,0,0,0,0,9,9,0,0,0,0,0,0,0,0,0,0,0
+NEUROPATHIC_PAIN,Neuropathic pain,8,8,1,0,0,0,0,0,0,0,0,0,0,0,8,8,0,0,0,0,0,0,0
+ORTHOPEDIC,Orthopaedic impairment,7,7,1,0,0,0,0,0,0,0,7,7,0,0,0,0,0,0,0,0,0,0,0
+ODD,Oppositional defiant disorder,6,7,2,0,6,7,6,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+CANCER_PAIN,Cancer pain (head and neck),5,5,1,0,5,5,0,0,0,0,5,5,0,0,0,0,0,0,0,0,0,0,0
+SSPI,Severe speech and physical impairment (incl. ALS),5,5,1,0,0,0,0,0,0,0,5,5,0,0,0,0,0,0,0,0,0,0,0
+SOCIAL_ANXIETY,Social anxiety disorder,4,4,2,0,4,4,4,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OB_AGENESIS,Absent olfactory bulbs (with preserved olfaction),4,4,1,0,4,4,3,3,4,4,0,0,0,0,0,0,0,0,0,0,0,0,3
+SUD,Substance use disorder,2,2,1,0,2,2,2,2,2,2,0,0,0,0,0,0,0,0,2,2,0,0,2
+BRAIN_ABSCESS,Brain abscess,2,2,1,0,2,2,0,0,2,2,0,0,0,0,0,0,0,0,0,0,0,0,0
+CORTICAL_MALFORMATION,Malformation of cortical development (heterotopia),1,1,1,0,1,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+PROSOPOMETAMORPHOPSIA,Prosopometamorphopsia (face distortion),1,1,1,0,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1
+HEALTHY,Healthy participant,36352,36658,795,100,21959,22045,20458,20480,7166,7166,9524,9744,329,329,0,0,676,720,2093,2093,398,398,6854
+PRESUMED_HEALTHY,No clinical label (non-clinical study),33228,33993,772,0,18098,18191,16222,16247,2174,2174,9678,9709,731,731,433,433,396,396,749,749,352,362,2038
+MIXED_COMMUNITY,Community sample with mixed or dimensional clinical status (diagnoses not shared),3261,3261,14,0,143,143,143,143,50,50,3118,3118,0,0,0,0,0,0,49,49,0,0,50
+UNRESOLVED,"Patient or control, group not public per participant",2567,2606,25,0,2224,2263,1144,1183,888,888,0,0,145,145,0,0,0,0,0,0,64,64,434
+NOT_REPORTED,Clinical status not reported,305,323,22,0,156,174,112,112,43,43,148,148,0,0,0,0,0,0,0,0,0,0,35

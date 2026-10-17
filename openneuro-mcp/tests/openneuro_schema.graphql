@@ -1,0 +1,202 @@
+# Subset of the OpenNeuro GraphQL schema, transcribed from
+# OpenNeuroOrg/openneuro packages/openneuro-server/src/graphql/schema/*.ts
+# (query.ts, dataset-search.ts, dataset.ts, snapshot.ts, metadata.ts,
+#  description.ts, files.ts, misc.ts, inputs.ts, enums.ts, pagination.ts).
+# Only the types this MCP server queries are included. Used by the tests to
+# validate every GraphQL document the server sends.
+
+scalar DateTime
+scalar BigInt
+
+enum SortOrdering { ascending descending }
+enum RelatedObjectRelation { sameAs derivative source }
+enum RelatedObjectKind { Dataset Article }
+enum SearchSortOption { relevance newest oldest activity name_asc name_desc last_updated }
+
+type Query {
+  dataset(id: ID!): Dataset
+  datasets(first: Int = 25, after: String, before: String, orderBy: DatasetSort, filterBy: DatasetFilter, myDatasets: Boolean, modality: String): DatasetConnection
+  snapshot(datasetId: ID!, tag: String!): Snapshot
+  participantCount(modality: String): Int
+  publicMetadata: [Metadata]
+  search(q: String!, after: String, first: Int): DatasetConnection
+  advancedSearch(query: DatasetSearchInput!, allDatasets: Boolean, datasetType: String, datasetStatus: String, after: String, first: Int): DatasetConnection
+}
+
+input DatasetSort {
+  created: SortOrdering
+  name: SortOrdering
+  uploader: SortOrdering
+  stars: SortOrdering
+  downloads: SortOrdering
+  views: SortOrdering
+  subscriptions: SortOrdering
+  publishDate: SortOrdering
+}
+
+input DatasetFilter {
+  public: Boolean
+  shared: Boolean
+  invalid: Boolean
+  starred: Boolean
+  all: Boolean
+}
+
+input DatasetSearchInput {
+  keywords: [String!]
+  modality: String
+  ageRange: [Int]
+  subjectCountRange: [Int]
+  diagnosis: String
+  tasks: [String!]
+  authors: [String!]
+  sex: String
+  dateRange: String
+  species: String
+  studyStructure: String
+  studyDomains: [String!]
+  bidsDatasetType: String
+  brainInitiative: Boolean
+  bodyParts: [String!]
+  scannerManufacturers: [String!]
+  scannerManufacturersModelNames: [String!]
+  tracerNames: [String!]
+  tracerRadionuclides: [String!]
+  sortBy: SearchSortOption
+  userId: String
+  publicOnly: Boolean
+  syntheticDataset: Boolean
+}
+
+type PageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String
+  endCursor: String
+  count: Int
+}
+
+type DatasetEdge {
+  id: String!
+  node: Dataset!
+  cursor: String!
+}
+
+type DatasetConnection {
+  edges: [DatasetEdge]
+  pageInfo: PageInfo!
+}
+
+type DatasetDerivatives {
+  name: String
+  local: Boolean
+  s3Url: String
+  dataladUrl: String
+}
+
+type Dataset {
+  id: ID!
+  created: DateTime!
+  public: Boolean
+  snapshots: [Snapshot]
+  latestSnapshot: Snapshot!
+  name: String
+  publishDate: DateTime
+  derivatives: [DatasetDerivatives]
+  metadata: Metadata
+}
+
+type RelatedObject {
+  id: ID!
+  relation: RelatedObjectRelation!
+  kind: RelatedObjectKind!
+  description: String
+}
+
+type Snapshot {
+  id: ID!
+  tag: String!
+  dataset: Dataset!
+  created: DateTime
+  summary: Summary
+  files(tree: String, recursive: Boolean): [DatasetFile]
+  description: Description
+  readme: String
+  hexsha: String
+  related: [RelatedObject]
+  size: BigInt
+}
+
+type DatasetFile {
+  id: ID!
+  filename: String!
+  size: BigInt
+  annexed: Boolean
+  urls: [String]
+  directory: Boolean
+}
+
+type Description {
+  id: ID!
+  Name: String!
+  BIDSVersion: String!
+  License: String
+  Authors: [String]
+  SeniorAuthor: String
+  Acknowledgements: String
+  HowToAcknowledge: String
+  Funding: [String]
+  ReferencesAndLinks: [String]
+  DatasetDOI: String
+  DatasetType: String
+  EthicsApprovals: [String]
+}
+
+type SubjectMetadata {
+  participantId: String!
+  age: Float
+  sex: String
+  group: String
+}
+
+type Summary {
+  id: ID!
+  modalities: [String]
+  primaryModality: String
+  secondaryModalities: [String]
+  sessions: [String]
+  subjects: [String]
+  subjectMetadata: [SubjectMetadata]
+  tasks: [String]
+  size: BigInt!
+  totalFiles: Int!
+  dataProcessed: Boolean
+  schemaVersion: String
+}
+
+type Metadata {
+  datasetId: ID!
+  datasetUrl: String
+  datasetName: String
+  firstSnapshotCreatedAt: DateTime
+  latestSnapshotCreatedAt: DateTime
+  dxStatus: String
+  tasksCompleted: [String]
+  trialCount: Int
+  studyDesign: String
+  studyDomain: String
+  studyLongitudinal: String
+  dataProcessed: Boolean
+  species: String
+  associatedPaperDOI: String
+  openneuroPaperDOI: String
+  seniorAuthor: String
+  adminUsers: [String]
+  ages: [Float]
+  modalities: [String]
+  grantFunderName: String
+  grantIdentifier: String
+  affirmedDefaced: Boolean
+  affirmedConsent: Boolean
+  syntheticDataset: Boolean
+}

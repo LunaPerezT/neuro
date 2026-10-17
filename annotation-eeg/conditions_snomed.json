@@ -1,0 +1,162 @@
+{
+ "HEALTHY": {
+  "snomed_code": "102512003",
+  "snomed_term": "Well adult",
+  "snomed_match": "broader (also used for children/adolescents)"
+ },
+ "PD": {
+  "snomed_code": "49049000",
+  "snomed_term": "Parkinson's disease",
+  "snomed_match": "exact"
+ },
+ "EPILEPSY": {
+  "snomed_code": "84757009",
+  "snomed_term": "Epilepsy",
+  "snomed_match": "exact"
+ },
+ "AD": {
+  "snomed_code": "26929004",
+  "snomed_term": "Alzheimer's disease",
+  "snomed_match": "exact"
+ },
+ "FTD": {
+  "snomed_code": "230270009",
+  "snomed_term": "Frontotemporal dementia",
+  "snomed_match": "exact"
+ },
+ "MCI": {
+  "snomed_code": "386805003",
+  "snomed_term": "Mild neurocognitive disorder",
+  "snomed_match": "exact (synonym: mild cognitive impairment)"
+ },
+ "DEMENTIA": {
+  "snomed_code": "52448006",
+  "snomed_term": "Dementia",
+  "snomed_match": "exact"
+ },
+ "SCZ": {
+  "snomed_code": "58214004",
+  "snomed_term": "Schizophrenia",
+  "snomed_match": "broader (spectrum includes schizoaffective)"
+ },
+ "FEP": {
+  "snomed_code": "69322001",
+  "snomed_term": "Psychotic disorder",
+  "snomed_match": "broader (no first-episode concept)"
+ },
+ "TBI": {
+  "snomed_code": "127295002",
+  "snomed_term": "Traumatic brain injury",
+  "snomed_match": "exact (mild cases: 110030002 Concussion injury of brain)"
+ },
+ "COVID19": {
+  "snomed_code": "840539006",
+  "snomed_term": "COVID-19",
+  "snomed_match": "exact (history of infection)"
+ },
+ "POST_COVID": {
+  "snomed_code": "1119304009",
+  "snomed_term": "Chronic post-COVID-19 syndrome",
+  "snomed_match": "exact"
+ },
+ "STROKE": {
+  "snomed_code": "230690007",
+  "snomed_term": "Cerebrovascular accident",
+  "snomed_match": "exact"
+ },
+ "AUD": {
+  "snomed_code": "1336085007",
+  "snomed_term": "Disorder due to alcohol use",
+  "snomed_match": "exact"
+ },
+ "HAZARDOUS_DRINKING": {
+  "snomed_code": "86933000",
+  "snomed_term": "Heavy drinker",
+  "snomed_match": "exact (finding)"
+ },
+ "LEARNING_DISORDER": {
+  "snomed_code": "161129001",
+  "snomed_term": "Learning difficulties",
+  "snomed_match": "exact (finding)"
+ },
+ "DEAF": {
+  "snomed_code": "15188001",
+  "snomed_term": "Hearing loss",
+  "snomed_match": "broader"
+ },
+ "CLN3": {
+  "snomed_code": "61663001",
+  "snomed_term": "Juvenile neuronal ceroid lipofuscinosis",
+  "snomed_match": "exact"
+ },
+ "SUBCLIN_DEPRESSION": {
+  "snomed_code": "394924000",
+  "snomed_term": "Symptoms of depression",
+  "snomed_match": "exact (finding, not a diagnosis)"
+ },
+ "BLINDNESS": {
+  "snomed_code": "193709009",
+  "snomed_term": "Bilateral acquired blindness of eyes",
+  "snomed_match": "approximate (congenital blindness possible)"
+ },
+ "SSPI": {
+  "snomed_code": "86044005",
+  "snomed_term": "Amyotrophic lateral sclerosis",
+  "snomed_match": "partial (only some participants have ALS)"
+ },
+ "ZAN": {
+  "snomed_code": "2177002",
+  "snomed_term": "Postherpetic neuralgia",
+  "snomed_match": "approximate (zoster-associated neuralgia also includes acute phase)"
+ },
+ "AMPUTATION": {
+  "snomed_code": "735928001",
+  "snomed_term": "Acquired absence of entire limb",
+  "snomed_match": "approximate"
+ },
+ "BURN": {
+  "snomed_code": "284196006",
+  "snomed_term": "Burn of skin",
+  "snomed_match": "exact"
+ },
+ "ORTHOPEDIC": {
+  "snomed_code": "928000",
+  "snomed_term": "Disorder of musculoskeletal system",
+  "snomed_match": "broader"
+ },
+ "PSEN1_CARRIER": {
+  "snomed_code": "230265002",
+  "snomed_term": "Familial Alzheimer's disease of early onset",
+  "snomed_match": "approximate (asymptomatic mutation carriers)"
+ },
+ "ICU": {
+  "snomed_code": null,
+  "snomed_term": null,
+  "snomed_match": "no suitable concept (critical illness is a care setting)"
+ },
+ "PROCEDURE_PATIENT": {
+  "snomed_code": null,
+  "snomed_term": null,
+  "snomed_match": "no suitable concept (surgical/anaesthesia context)"
+ },
+ "OBESITY": {
+  "snomed_code": "414916001",
+  "snomed_term": "Obesity",
+  "snomed_match": "exact"
+ },
+ "MISOPHONIA": {
+  "snomed_code": "1290516000",
+  "snomed_term": "Misophonia",
+  "snomed_match": "exact (no per-participant labels)"
+ },
+ "CANCER_PAIN": {
+  "snomed_code": "735935009",
+  "snomed_term": "Chronic pain due to malignant neoplastic disease",
+  "snomed_match": "exact"
+ },
+ "MIXED_COMMUNITY": {
+  "snomed_code": null,
+  "snomed_term": null,
+  "snomed_match": "not a single condition"
+ }
+}

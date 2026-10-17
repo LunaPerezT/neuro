@@ -1,0 +1,1211 @@
+{
+ "ds007358": {
+  "cond": "PRESUMED_HEALTHY",
+  "conf": "low",
+  "note": "Large community sample (India, Tanzania); id prefixes are recording sites, not groups."
+ },
+ "ds005385": {
+  "cond": "HEALTHY",
+  "conf": "high",
+  "note": "Healthy adult lifespan cohort; README disease terms are exclusion criteria."
+ },
+ "ds008768": {
+  "col": "group",
+  "map": {
+   "PD": "PD",
+   "Control": "HEALTHY"
+  },
+  "conf": "high",
+  "cohort": "PD_rest_ds008768",
+  "flag": "Authors ask not to analyse until a new version is released (README, Oct 2026).",
+  "group": "iowa_pd_narayanan"
+ },
+ "ds008875": {
+  "col": "group",
+  "map": {
+   "PD": "PD",
+   "Control": "HEALTHY",
+   "DBS": "PD"
+  },
+  "conf": "high",
+  "note": "DBS = Parkinson's disease patients with deep brain stimulation.",
+  "group": "iowa_pd_narayanan",
+  "cohort": "iowa_pd_dbs"
+ },
+ "ds008115": {
+  "cond": "ICU",
+  "conf": "medium",
+  "note": "Critical-care patients, nociception monitoring."
+ },
+ "ds007823": {
+  "dup_of": "ds008082",
+  "note": "Same 173 COVID-19 survivors/contacts as ds008082, which has per-participant groups."
+ },
+ "ds008082": {
+  "col": "group",
+  "map": {
+   "Covid": "COVID19",
+   "Control": "HEALTHY"
+  },
+  "conf": "high",
+  "cohort": "covid_cuba"
+ },
+ "ds005305": {
+  "cond": "HEALTHY",
+  "conf": "high"
+ },
+ "ds005486": {
+  "cond": "HEALTHY",
+  "conf": "medium",
+  "intervention": "experimental muscle pain (NGF injection)",
+  "note": "PREDICT: healthy volunteers, pain-sensitivity prediction study (Chowdhury, Seminowicz et al.)."
+ },
+ "ds004118": {
+  "col": "group",
+  "map": {
+   "Normal": "HEALTHY"
+  },
+  "conf": "high",
+  "cohort": "BCIT"
+ },
+ "ds004584": {
+  "col": "GROUP",
+  "map": {
+   "PD": "PD",
+   "Control": "HEALTHY"
+  },
+  "conf": "high",
+  "cohort": "iowa_pd_2017_2021",
+  "group": "iowa_pd_narayanan"
+ },
+ "ds004580": {
+  "col": "GROUP",
+  "map": {
+   "PD": "PD",
+   "Control": "HEALTHY"
+  },
+  "conf": "high",
+  "cohort": "iowa_pd_2017_2021",
+  "group": "iowa_pd_narayanan"
+ },
+ "ds004574": {
+  "col": "GROUP",
+  "map": {
+   "PD": "PD",
+   "Control": "HEALTHY"
+  },
+  "conf": "high",
+  "cohort": "iowa_pd_2017_2021",
+  "group": "iowa_pd_narayanan"
+ },
+ "ds007526": {
+  "col": "group",
+  "map": {
+   "PD": "PD",
+   "HC": "HEALTHY"
+  },
+  "conf": "high"
+ },
+ "ds006923": {
+  "col": "Subject type",
+  "map": {
+   "Offender": "HEALTHY",
+   "No Offender": "HEALTHY"
+  },
+  "conf": "medium",
+  "note": "Juvenile offenders vs non-offenders: a legal, not clinical, grouping (kept as subgroup)."
+ },
+ "ds004579": {
+  "col": "GROUP",
+  "map": {
+   "PD": "PD",
+   "Control": "HEALTHY"
+  },
+  "conf": "high",
+  "cohort": "iowa_pd_2017_2021",
+  "group": "iowa_pd_narayanan"
+ },
+ "ds005555": {
+  "cond": "HEALTHY",
+  "conf": "medium",
+  "check": false,
+  "person_col": "pid",
+  "note": "128 nights; 'pid' identifies the person (several nights each)."
+ },
+ "ds005863": {
+  "dup_of": "ds006018",
+  "note": "Same 127 participants as ds006018."
+ },
+ "ds006018": {
+  "cond": "HEALTHY",
+  "conf": "high",
+  "cohort": "ses_adulthood"
+ },
+ "ds005873": {
+  "cond": "EPILEPSY",
+  "conf": "high",
+  "note": "SeizeIT2 wearable EEG, people with epilepsy."
+ },
+ "ds003474": {
+  "derive": {
+   "col": "BDI",
+   "threshold": 13,
+   "above": "SUBCLIN_DEPRESSION",
+   "below": "HEALTHY"
+  },
+  "conf": "medium",
+  "cohort": "allen_bdi",
+  "note": "College students selected for high/low Beck Depression Inventory; BDI >= 13 labelled elevated symptoms (not a diagnosis)."
+ },
+ "ds003478": {
+  "derive": {
+   "col": "BDI",
+   "threshold": 13,
+   "above": "SUBCLIN_DEPRESSION",
+   "below": "HEALTHY"
+  },
+  "conf": "medium",
+  "cohort": "allen_bdi",
+  "note": "College students selected for high/low Beck Depression Inventory; BDI >= 13 labelled elevated symptoms (not a diagnosis)."
+ },
+ "ds006861": {
+  "col": "Group",
+  "map": {
+   "Low Lonely": "HEALTHY",
+   "High Lonely": "HEALTHY"
+  },
+  "conf": "high",
+  "note": "Loneliness groups (non-clinical).",
+  "intervention": "tDCS"
+ },
+ "ds003518": {
+  "cond": "HEALTHY",
+  "conf": "high",
+  "cohort": "cavanagh_cabergoline",
+  "intervention": "cabergoline (subset)"
+ },
+ "ds004532": {
+  "cond": "HEALTHY",
+  "conf": "high",
+  "cohort": "cavanagh_cabergoline",
+  "intervention": "cabergoline (subset)"
+ },
+ "ds004120": {
+  "col": "group",
+  "map": {
+   "Normal": "HEALTHY"
+  },
+  "conf": "high",
+  "cohort": "BCIT"
+ },
+ "ds005628": {
+  "cond": "PRESUMED_HEALTHY",
+  "conf": "medium",
+  "note": "Group = stimulus condition, not clinical."
+ },
+ "ds007827": {
+  "col": "group",
+  "map": {
+   "Lonely": "HEALTHY",
+   "Non-Lonely": "HEALTHY"
+  },
+  "conf": "high",
+  "note": "Loneliness groups (non-clinical)."
+ },
+ "ds003969": {
+  "col": "group",
+  "map": {
+   "ctr": "HEALTHY",
+   "htr": "HEALTHY",
+   "sny": "HEALTHY",
+   "vip": "HEALTHY",
+   "tm": "HEALTHY"
+  },
+  "conf": "high",
+  "note": "Meditators of several traditions vs controls (non-clinical)."
+ },
+ "ds008878": {
+  "cond": "PRESUMED_HEALTHY",
+  "conf": "low",
+  "flag": "Local review snapshot, not an authorised public release (README)."
+ },
+ "ds007605": {
+  "col": "group",
+  "map": {
+   "withPCS": "POST_COVID",
+   "withoutPCS": "COVID19"
+  },
+  "conf": "high",
+  "note": "All had SARS-CoV-2; withPCS = post-COVID syndrome with subjective cognitive impairment."
+ },
+ "ds003522": {
+  "col": "Group",
+  "map": {
+   "0": "TBI",
+   "1": "HEALTHY",
+   "2": "TBI"
+  },
+  "conf": "high",
+  "cohort": "cavanagh_tbi",
+  "note": "0 = sub-acute mild TBI, 2 = chronic TBI (data dictionary uses 'zero/one/two').",
+  "group": "cavanagh_tbi_unm"
+ },
+ "ds008896": {
+  "col": "group",
+  "map": {
+   "HV": "HEALTHY",
+   "CLN3": "CLN3"
+  },
+  "conf": "high"
+ },
+ "ds007020": {
+  "cond": "PD",
+  "conf": "medium",
+  "check": false,
+  "note": "All 94 shared ids are sub-PD*; README mentions controls that are not in this release.",
+  "group": "iowa_pd_narayanan",
+  "cohort": "iowa_pd_mortality"
+ },
+ "ds003523": {
+  "col": "Group",
+  "map": {
+   "0": "TBI",
+   "1": "HEALTHY"
+  },
+  "conf": "high",
+  "cohort": "cavanagh_mtbi_acute",
+  "group": "cavanagh_tbi_unm"
+ },
+ "ds005114": {
+  "col": "Group",
+  "map": {
+   "0": "TBI",
+   "1": "HEALTHY"
+  },
+  "conf": "high",
+  "cohort": "cavanagh_mtbi_acute",
+  "group": "cavanagh_tbi_unm"
+ },
+ "ds004504": {
+  "col": "Group",
+  "map": {
+   "A": "AD",
+   "F": "FTD",
+   "C": "HEALTHY"
+  },
+  "conf": "high",
+  "cohort": "ad_ftd_thessaloniki"
+ },
+ "ds006036": {
+  "col": "Group",
+  "map": {
+   "A": "AD",
+   "F": "FTD",
+   "C": "HEALTHY"
+  },
+  "conf": "high",
+  "cohort": "ad_ftd_thessaloniki",
+  "note": "Same 88 people as ds004504, photic stimulation recordings."
+ },
+ "ds003944": {
+  "col": "type",
+  "map": {
+   "Psychosis": "FEP",
+   "Control": "HEALTHY"
+  },
+  "conf": "high",
+  "cohort": "fep_pitt_1"
+ },
+ "ds007801": {
+  "person_regex": "^sub-[DM](.+)$",
+  "id_map": {
+   "25MB": "HEALTHY",
+   "26MK": "HEALTHY",
+   "35YT": "HEALTHY",
+   "21IS": "HEALTHY",
+   "36YB": "HEALTHY"
+  },
+  "default": "STROKE",
+  "conf": "high",
+  "note": "40 people x 2 recordings (D = imagined, M = attempted movement); 5 controls listed in README; patients have left/right paralysis."
+ },
+ "ds004796": {
+  "cond": "HEALTHY",
+  "conf": "high",
+  "note": "PEARL-Neuro: healthy middle-aged adults with APOE genotypes (risk, not disease)."
+ },
+ "ds008092": {
+  "cond": "HEALTHY",
+  "conf": "high",
+  "cohort": "diet_identity",
+  "note": "Dietary groups (non-clinical)."
+ },
+ "ds008940": {
+  "cond": "HEALTHY",
+  "conf": "high",
+  "cohort": "diet_identity"
+ },
+ "ds006260": {
+  "cond": "LEARNING_DISORDER",
+  "conf": "medium",
+  "check": false,
+  "note": "Children with learning difficulties (reading/math); Group = intervention vs control arm; ids M/R = math/reading."
+ },
+ "ds003690": {
+  "cond": "HEALTHY",
+  "conf": "high",
+  "note": "Young vs older healthy adults."
+ },
+ "ds004166": {
+  "cond": "HEALTHY",
+  "conf": "high"
+ },
+ "ds006222": {
+  "cond": "HEALTHY",
+  "conf": "high",
+  "cohort": "flicker_pvt",
+  "intervention": "40 Hz audiovisual flicker"
+ },
+ "ds007509": {
+  "cond": "HEALTHY",
+  "conf": "high",
+  "cohort": "flicker_pvt",
+  "intervention": "40 Hz audiovisual flicker"
+ },
+ "ds006576": {
+  "cond": "HEALTHY",
+  "conf": "high"
+ },
+ "ds007615": {
+  "cond": "HEALTHY",
+  "conf": "high",
+  "note": "Healthy women grouped by hormonal contraceptive use."
+ },
+ "ds006480": {
+  "cond": "PRESUMED_HEALTHY",
+  "conf": "medium",
+  "cohort": "heartbeam",
+  "note": "Young adults; threat-of-shock arousal."
+ },
+ "ds007558": {
+  "cond": "NOT_REPORTED",
+  "conf": "low",
+  "check": false
+ },
+ "ds006434": {
+  "cond": "PRESUMED_HEALTHY",
+  "conf": "medium",
+  "note": "Id prefixes are listening conditions."
+ },
+ "ds006466": {
+  "cond": "PRESUMED_HEALTHY",
+  "conf": "medium",
+  "cohort": "heartbeam_older"
+ },
+ "ds007181": {
+  "col": "group",
+  "map": {
+   "ZAN": "ZAN",
+   "HC": "HEALTHY"
+  },
+  "conf": "high"
+ },
+ "ds005291": {
+  "cond": "HEALTHY",
+  "conf": "high"
+ },
+ "ds006110": {
+  "cond": "HEALTHY",
+  "conf": "high",
+  "intervention": "psilocybin 19 mg",
+  "note": "PsiConnect."
+ },
+ "ds008711": {
+  "col": "Group",
+  "map": {
+   "1": "DEAF",
+   "2": "HEALTHY"
+  },
+  "conf": "medium",
+  "cohort": "holcomb_sentences",
+  "note": "Group 1 has ASL age-of-acquisition values (deaf signers), group 2 has none (hearing); dataset dxStatus of ds005296 says 'Deaf and Hearing'."
+ },
+ "ds006803": {
+  "cond": "HEALTHY",
+  "conf": "high"
+ },
+ "ds006850": {
+  "cond": "HEALTHY",
+  "conf": "high"
+ },
+ "ds008095": {
+  "cond": "NOT_REPORTED",
+  "conf": "low",
+  "check": true,
+  "note": "Not on the GitHub mirror."
+ },
+ "ds005296": {
+  "col": "Group",
+  "map": {
+   "1": "DEAF",
+   "2": "HEALTHY"
+  },
+  "conf": "medium",
+  "cohort": "holcomb_sentences",
+  "note": "Group 1 has ASL age-of-acquisition values (deaf signers), group 2 has none (hearing); dataset dxStatus of ds005296 says 'Deaf and Hearing'."
+ },
+ "ds003947": {
+  "col": "type",
+  "map": {
+   "Psychosis": "FEP",
+   "Control": "HEALTHY"
+  },
+  "conf": "high",
+  "cohort": "fep_pitt_2"
+ },
+ "ds005866": {
+  "col": "Group",
+  "map": {
+   "1": "DEAF",
+   "2": "HEALTHY"
+  },
+  "conf": "medium",
+  "cohort": "holcomb_flankers",
+  "note": "Group 1 has ASL age-of-acquisition values (deaf signers), group 2 has none (hearing); dataset dxStatus of ds005296 says 'Deaf and Hearing'."
+ },
+ "ds008851": {
+  "col": "group",
+  "map": {
+   "Alcohol_Dependent": "AUD",
+   "Healthy_Control": "HEALTHY"
+  },
+  "conf": "high"
+ },
+ "ds007322": {
+  "cond": "PRESUMED_HEALTHY",
+  "conf": "medium"
+ },
+ "ds003506": {
+  "col": "Group",
+  "map": {
+   "PD": "PD",
+   "CTL": "HEALTHY"
+  },
+  "conf": "high",
+  "cohort": "cavanagh_pd_onoff",
+  "note": "PD tested ON and OFF dopaminergic medication."
+ },
+ "ds003509": {
+  "col": "Group",
+  "map": {
+   "PD": "PD",
+   "CTL": "HEALTHY"
+  },
+  "conf": "high",
+  "cohort": "cavanagh_pd_onoff"
+ },
+ "ds007666": {
+  "cond": "NOT_REPORTED",
+  "conf": "low",
+  "note": "Groups G1-G3 and 'unknown' undocumented."
+ },
+ "ds007667": {
+  "dup_of": "ds007666"
+ },
+ "ds004515": {
+  "col": "GROUP",
+  "map": {
+   "ALC": "HAZARDOUS_DRINKING",
+   "CTL": "HEALTHY"
+  },
+  "conf": "high",
+  "cohort": "cavanagh_alcohol",
+  "group": "cavanagh_alcohol"
+ },
+ "ds004595": {
+  "col": "GROUP",
+  "map": {
+   "AUD": "HAZARDOUS_DRINKING",
+   "CTRL": "HEALTHY"
+  },
+  "conf": "high",
+  "cohort": "cavanagh_alcohol",
+  "note": "Coded 'AUD' but README describes hazardous drinkers from the community.",
+  "group": "cavanagh_alcohol"
+ },
+ "ds005907": {
+  "dup_of": "ds004595",
+  "group": "cavanagh_alcohol"
+ },
+ "ds004626": {
+  "cond": "HEALTHY",
+  "conf": "high",
+  "note": "Lonely vs not lonely (non-clinical)."
+ },
+ "ds007609": {
+  "cond": "HEALTHY",
+  "conf": "high",
+  "note": "Trait anxiety in healthy adults."
+ },
+ "ds003490": {
+  "col": "Group",
+  "map": {
+   "PD": "PD",
+   "CTL": "HEALTHY"
+  },
+  "conf": "high",
+  "cohort": "cavanagh_pd_onoff"
+ },
+ "ds004315": {
+  "cond": "HEALTHY",
+  "conf": "high",
+  "cohort": "cavanagh_mood"
+ },
+ "ds004317": {
+  "cond": "HEALTHY",
+  "conf": "high",
+  "cohort": "cavanagh_mood"
+ },
+ "ds002893": {
+  "cond": "HEALTHY",
+  "conf": "high",
+  "note": "Younger vs older adults."
+ },
+ "ds005868": {
+  "col": "Group",
+  "map": {
+   "1": "DEAF",
+   "2": "HEALTHY"
+  },
+  "conf": "medium",
+  "cohort": "holcomb_flankers",
+  "note": "Group 1 has ASL age-of-acquisition values (deaf signers), group 2 has none (hearing); dataset dxStatus of ds005296 says 'Deaf and Hearing'."
+ },
+ "ds006554": {
+  "cond": "PRESUMED_HEALTHY",
+  "conf": "medium"
+ },
+ "ds007176": {
+  "prefix": true,
+  "prefix_regex": "^sub-(G[12]|[A-Za-z]+)",
+  "map": {
+   "ctr": "HEALTHY",
+   "g2": "HEALTHY"
+  },
+  "conf": "high",
+  "cohort": "antioquia_psen1",
+  "note": "Healthy controls (CTR) and PSEN1 non-carrier family controls (G2)."
+ },
+ "ds007864": {
+  "cond": "PD",
+  "conf": "medium",
+  "check": false,
+  "intervention": "NeuroEPO (erythropoietin)",
+  "cohort": "neuroepo",
+  "group": "neuroepo_cuba"
+ },
+ "ds003620": {
+  "cond": "HEALTHY",
+  "conf": "medium",
+  "note": "2 participants self-report an unspecified neurological/psychiatric diagnosis."
+ },
+ "ds007427": {
+  "prefix": true,
+  "prefix_regex": "^sub-(G[12]|[A-Za-z]+)",
+  "map": {
+   "ctr": "HEALTHY",
+   "g2": "HEALTHY",
+   "g1": "PSEN1_CARRIER",
+   "dcl": "MCI",
+   "dta": "AD"
+  },
+  "conf": "medium",
+  "cohort": "antioquia_psen1",
+  "note": "README defines G1/G2; CTR, DCL (deterioro cognitivo leve) and DTA (demencia tipo Alzheimer) are the standard Spanish abbreviations."
+ },
+ "ds004000": {
+  "col": "group",
+  "map": {
+   "P": "SCZ",
+   "HC": "HEALTHY"
+  },
+  "conf": "high"
+ },
+ "ds005363": {
+  "cond": "HEALTHY",
+  "conf": "high"
+ },
+ "ds008083": {
+  "cond": "HEALTHY",
+  "conf": "medium",
+  "note": "Psychosis proneness in a non-clinical sample."
+ },
+ "ds004621": {
+  "cond": "HEALTHY",
+  "conf": "high"
+ },
+ "ds007753": {
+  "cond": "PRESUMED_HEALTHY",
+  "conf": "medium"
+ },
+ "ds003570": {
+  "cond": "HEALTHY",
+  "conf": "medium",
+  "note": "Musicians (improvisers vs classical)."
+ },
+ "ds003751": {
+  "cond": "HEALTHY",
+  "conf": "high"
+ },
+ "ds004367": {
+  "col": "Group",
+  "map": {
+   "Patient": "SCZ",
+   "Control": "HEALTHY"
+  },
+  "conf": "high",
+  "cohort": "scz_marseille"
+ },
+ "ds004388": {
+  "cond": "HEALTHY",
+  "conf": "high",
+  "cohort": "spinal_sep"
+ },
+ "ds004563": {
+  "cond": "HEALTHY",
+  "conf": "high",
+  "note": "Vicarious touch groups; 'E' = excluded participants."
+ },
+ "ds004368": {
+  "col": "Group",
+  "map": {
+   "Patient": "SCZ",
+   "Control": "HEALTHY"
+  },
+  "conf": "high",
+  "cohort": "scz_marseille"
+ },
+ "ds005289": {
+  "cond": "HEALTHY",
+  "conf": "high",
+  "cohort": "laser_pain_cn"
+ },
+ "ds004802": {
+  "cond": "HEALTHY",
+  "conf": "medium",
+  "note": "Loneliness pilot; 6 report a past mental-health diagnosis."
+ },
+ "ds006921": {
+  "col": "Amputee",
+  "map": {
+   "1": "AMPUTATION",
+   "0": "HEALTHY"
+  },
+  "conf": "high",
+  "note": "Amputees with and without phantom limb pain vs intact controls."
+ },
+ "ds005048": {
+  "col": "Group",
+  "map": {
+   "Mild AD": "AD",
+   "Moderate AD": "AD",
+   "MCI": "MCI",
+   "Normal": "HEALTHY"
+  },
+  "conf": "high",
+  "intervention": "40 Hz auditory stimulation"
+ },
+ "ds006817": {
+  "cond": "PRESUMED_HEALTHY",
+  "conf": "medium"
+ },
+ "ds003004": {
+  "cond": "HEALTHY",
+  "conf": "high"
+ },
+ "ds004521": {
+  "cond": "PRESUMED_HEALTHY",
+  "conf": "medium",
+  "cohort": "ester_pytel"
+ },
+ "ds004520": {
+  "cond": "PRESUMED_HEALTHY",
+  "conf": "medium",
+  "cohort": "ester_pytel_2"
+ },
+ "ds005795": {
+  "cond": "HEALTHY",
+  "conf": "high"
+ },
+ "ds003768": {
+  "cond": "HEALTHY",
+  "conf": "high",
+  "note": "33 healthy participants (README); EEG-fMRI during sleep."
+ },
+ "ds007822": {
+  "cond": "PRESUMED_HEALTHY",
+  "conf": "medium",
+  "note": "Group = hyperscanning triad."
+ },
+ "ds004122": {
+  "col": "group",
+  "map": {
+   "Normal": "HEALTHY"
+  },
+  "conf": "high",
+  "cohort": "BCIT"
+ },
+ "ds002778": {
+  "prefix": true,
+  "map": {
+   "pd": "PD",
+   "hc": "HEALTHY"
+  },
+  "conf": "high",
+  "cohort": "ucsd_pd",
+  "note": "Diagnosis only encoded in subject ids (sub-pd*/sub-hc*)."
+ },
+ "ds003555": {
+  "cond": "EPILEPSY",
+  "conf": "high",
+  "note": "Paediatric epilepsy with HFO markings."
+ },
+ "ds005286": {
+  "cond": "HEALTHY",
+  "conf": "high",
+  "cohort": "laser_pain_cn_ant"
+ },
+ "ds007537": {
+  "cond": "HEALTHY",
+  "conf": "high"
+ },
+ "ds008099": {
+  "cond": "HEALTHY",
+  "conf": "high"
+ },
+ "ds008465": {
+  "cond": "HEALTHY",
+  "conf": "high"
+ },
+ "ds004123": {
+  "col": "group",
+  "map": {
+   "Normal": "HEALTHY"
+  },
+  "conf": "high",
+  "cohort": "BCIT"
+ },
+ "ds007114": {
+  "cond": "HEALTHY",
+  "conf": "high"
+ },
+ "ds003519": {
+  "cond": "HEALTHY",
+  "conf": "high",
+  "cohort": "cavanagh_cabergoline",
+  "intervention": "cabergoline"
+ },
+ "ds004106": {
+  "col": "group",
+  "map": {
+   "Normal": "HEALTHY"
+  },
+  "conf": "high",
+  "cohort": "BCIT"
+ },
+ "ds006735": {
+  "cond": "PRESUMED_HEALTHY",
+  "conf": "medium"
+ },
+ "ds004389": {
+  "cond": "HEALTHY",
+  "conf": "high",
+  "cohort": "spinal_sep"
+ },
+ "ds001787": {
+  "cond": "HEALTHY",
+  "conf": "high",
+  "note": "Expert vs novice meditators."
+ },
+ "ds004350": {
+  "cond": "PRESUMED_HEALTHY",
+  "conf": "medium",
+  "note": "Neurofeedback vs sham."
+ },
+ "ds006104": {
+  "cond": "HEALTHY",
+  "conf": "high"
+ },
+ "ds006269": {
+  "cond": "ANIMAL",
+  "conf": "high",
+  "note": "Syngap1 rat model."
+ },
+ "ds007216": {
+  "cond": "PRESUMED_HEALTHY",
+  "conf": "medium"
+ },
+ "ds007865": {
+  "cond": "PD",
+  "conf": "medium",
+  "check": false,
+  "cohort": "neuroepo",
+  "intervention": "placebo (NeuroEPO trial)",
+  "group": "neuroepo_cuba"
+ },
+ "ds003987": {
+  "cond": "HEALTHY",
+  "conf": "high",
+  "intervention": "d-amphetamine 10/20 mg vs placebo"
+ },
+ "ds005520": {
+  "cond": "PRESUMED_HEALTHY",
+  "conf": "medium"
+ },
+ "ds002814": {
+  "cond": "PRESUMED_HEALTHY",
+  "conf": "low",
+  "note": "Template metadata (TODO placeholders)."
+ },
+ "ds004119": {
+  "col": "group",
+  "map": {
+   "Normal": "HEALTHY"
+  },
+  "conf": "high",
+  "cohort": "BCIT"
+ },
+ "ds004121": {
+  "col": "group",
+  "map": {
+   "Normal": "HEALTHY"
+  },
+  "conf": "high",
+  "cohort": "BCIT"
+ },
+ "ds005620": {
+  "cond": "HEALTHY",
+  "conf": "high",
+  "intervention": "propofol sedation"
+ },
+ "ds006801": {
+  "cond": "HEALTHY",
+  "conf": "high"
+ },
+ "ds001849": {
+  "cond": "PRESUMED_HEALTHY",
+  "conf": "low",
+  "note": "No participants.tsv or README."
+ },
+ "ds002691": {
+  "cond": "HEALTHY",
+  "conf": "high"
+ },
+ "ds003774": {
+  "cond": "PRESUMED_HEALTHY",
+  "conf": "medium"
+ },
+ "ds004043": {
+  "cond": "PRESUMED_HEALTHY",
+  "conf": "medium"
+ },
+ "ds004995": {
+  "cond": "PRESUMED_HEALTHY",
+  "conf": "medium"
+ },
+ "ds005688": {
+  "cond": "ANIMAL",
+  "conf": "high",
+  "note": "Mice (transcranial diagnostic ultrasound)."
+ },
+ "ds005815": {
+  "cond": "PRESUMED_HEALTHY",
+  "conf": "medium"
+ },
+ "ds001785": {
+  "cond": "HEALTHY",
+  "conf": "high"
+ },
+ "ds002218": {
+  "cond": "PRESUMED_HEALTHY",
+  "conf": "medium"
+ },
+ "ds002718": {
+  "cond": "HEALTHY",
+  "conf": "high",
+  "cohort": "wakeman_henson_faces",
+  "note": "EEG/MEG subset of ds000117."
+ },
+ "ds003574": {
+  "cond": "PRESUMED_HEALTHY",
+  "conf": "medium"
+ },
+ "ds004033": {
+  "cond": "HEALTHY",
+  "conf": "high"
+ },
+ "ds004381": {
+  "cond": "PROCEDURE_PATIENT",
+  "conf": "high",
+  "note": "Intraoperative neuromonitoring during neurosurgery."
+ },
+ "ds002338": {
+  "cond": "HEALTHY",
+  "conf": "high"
+ },
+ "ds004105": {
+  "col": "group",
+  "map": {
+   "Normal": "HEALTHY"
+  },
+  "conf": "high",
+  "cohort": "BCIT"
+ },
+ "ds004661": {
+  "cond": "PRESUMED_HEALTHY",
+  "conf": "medium"
+ },
+ "ds003194": {
+  "cond": "PD",
+  "conf": "high",
+  "cohort": "neuroepo_2019",
+  "intervention": "NeuroEPO (erythropoietin)",
+  "group": "neuroepo_cuba"
+ },
+ "ds004752": {
+  "cond": "EPILEPSY",
+  "conf": "high",
+  "note": "Focal epilepsy, intracranial monitoring."
+ },
+ "ds002034": {
+  "cond": "HEALTHY",
+  "conf": "high"
+ },
+ "ds003061": {
+  "cond": "PRESUMED_HEALTHY",
+  "conf": "medium"
+ },
+ "ds003710": {
+  "cond": "HEALTHY",
+  "conf": "high",
+  "note": "Typically developing infants (4-12 months)."
+ },
+ "ds003800": {
+  "cond": "DEMENTIA",
+  "conf": "medium",
+  "intervention": "40 Hz auditory stimulation"
+ },
+ "ds005262": {
+  "cond": "PRESUMED_HEALTHY",
+  "conf": "medium"
+ },
+ "ds004951": {
+  "cond": "BLINDNESS",
+  "conf": "medium",
+  "note": "Braille readers in a study of the visually deprived brain; group column only says 'control'."
+ },
+ "ds003195": {
+  "cond": "PD",
+  "conf": "high",
+  "cohort": "neuroepo_2019",
+  "intervention": "placebo (NeuroEPO trial)",
+  "group": "neuroepo_cuba"
+ },
+ "ds004598": {
+  "cond": "ANIMAL",
+  "conf": "high",
+  "note": "TgF344-AD rats."
+ },
+ "ds004840": {
+  "cond": "BURN",
+  "conf": "high",
+  "intervention": "music therapy"
+ },
+ "ds007591": {
+  "cond": "PRESUMED_HEALTHY",
+  "conf": "medium"
+ },
+ "ds004541": {
+  "cond": "PROCEDURE_PATIENT",
+  "conf": "high",
+  "intervention": "general anaesthesia (endoscopy/colonoscopy)"
+ },
+ "ds004022": {
+  "cond": "ORTHOPEDIC",
+  "conf": "high"
+ },
+ "ds005307": {
+  "cond": "HEALTHY",
+  "conf": "medium"
+ },
+ "ds007788": {
+  "cond": "HEALTHY",
+  "conf": "high"
+ },
+ "ds006126": {
+  "cond": "PRESUMED_HEALTHY",
+  "conf": "medium",
+  "intervention": "tDCS"
+ },
+ "ds006945": {
+  "cond": "HEALTHY",
+  "conf": "high"
+ },
+ "ds007720": {
+  "cond": "SSPI",
+  "conf": "medium",
+  "note": "BCI users with severe speech and physical impairment, including ALS."
+ },
+ "ds004196": {
+  "cond": "HEALTHY",
+  "conf": "high"
+ },
+ "ds007813": {
+  "cond": "NOT_REPORTED",
+  "conf": "high",
+  "exclude": true,
+  "flag": "Practice data; authors say not fit for any analysis."
+ },
+ "ds007028": {
+  "cond": "ANIMAL",
+  "conf": "high",
+  "note": "Macaque monkeys."
+ },
+ "ds007314": {
+  "cond": "STROKE",
+  "conf": "high",
+  "note": "Post-stroke anomia (aphasia).",
+  "intervention": "tACS"
+ },
+ "ds007315": {
+  "dup_of": "ds007314"
+ },
+ "ds003380": {
+  "cond": "ANIMAL",
+  "conf": "high",
+  "note": "Juvenile pigs."
+ },
+ "ds003805": {
+  "cond": "HEALTHY",
+  "conf": "high"
+ },
+ "ds004784": {
+  "cond": "PHANTOM",
+  "conf": "high",
+  "exclude": true
+ },
+ "ds005079": {
+  "cond": "HEALTHY",
+  "conf": "low",
+  "note": "Single-participant case study."
+ },
+ "ds004940": {
+  "cond": "HEALTHY",
+  "conf": "high",
+  "note": "Neurotypical adolescents."
+ },
+ "ds005505": {
+  "cond": "MIXED_COMMUNITY",
+  "conf": "high",
+  "cohort": "hbn_ds005505",
+  "note": "Healthy Brain Network: transdiagnostic paediatric sample. participants.tsv has p_factor, attention, internalizing and externalizing scores; clinical diagnoses require the HBN data-use agreement."
+ },
+ "ds005506": {
+  "cond": "MIXED_COMMUNITY",
+  "conf": "high",
+  "cohort": "hbn_ds005506",
+  "note": "Healthy Brain Network: transdiagnostic paediatric sample. participants.tsv has p_factor, attention, internalizing and externalizing scores; clinical diagnoses require the HBN data-use agreement."
+ },
+ "ds005507": {
+  "cond": "MIXED_COMMUNITY",
+  "conf": "high",
+  "cohort": "hbn_ds005507",
+  "note": "Healthy Brain Network: transdiagnostic paediatric sample. participants.tsv has p_factor, attention, internalizing and externalizing scores; clinical diagnoses require the HBN data-use agreement."
+ },
+ "ds005508": {
+  "cond": "MIXED_COMMUNITY",
+  "conf": "high",
+  "cohort": "hbn_ds005508",
+  "note": "Healthy Brain Network: transdiagnostic paediatric sample. participants.tsv has p_factor, attention, internalizing and externalizing scores; clinical diagnoses require the HBN data-use agreement."
+ },
+ "ds005509": {
+  "cond": "MIXED_COMMUNITY",
+  "conf": "high",
+  "cohort": "hbn_ds005509",
+  "note": "Healthy Brain Network: transdiagnostic paediatric sample. participants.tsv has p_factor, attention, internalizing and externalizing scores; clinical diagnoses require the HBN data-use agreement."
+ },
+ "ds005510": {
+  "cond": "MIXED_COMMUNITY",
+  "conf": "high",
+  "cohort": "hbn_ds005510",
+  "note": "Healthy Brain Network: transdiagnostic paediatric sample. participants.tsv has p_factor, attention, internalizing and externalizing scores; clinical diagnoses require the HBN data-use agreement."
+ },
+ "ds005512": {
+  "cond": "MIXED_COMMUNITY",
+  "conf": "high",
+  "cohort": "hbn_ds005512",
+  "note": "Healthy Brain Network: transdiagnostic paediatric sample. participants.tsv has p_factor, attention, internalizing and externalizing scores; clinical diagnoses require the HBN data-use agreement."
+ },
+ "ds005514": {
+  "cond": "MIXED_COMMUNITY",
+  "conf": "high",
+  "cohort": "hbn_ds005514",
+  "note": "Healthy Brain Network: transdiagnostic paediatric sample. participants.tsv has p_factor, attention, internalizing and externalizing scores; clinical diagnoses require the HBN data-use agreement."
+ },
+ "ds005515": {
+  "cond": "MIXED_COMMUNITY",
+  "conf": "high",
+  "cohort": "hbn_ds005515",
+  "note": "Healthy Brain Network: transdiagnostic paediatric sample. participants.tsv has p_factor, attention, internalizing and externalizing scores; clinical diagnoses require the HBN data-use agreement."
+ },
+ "ds005516": {
+  "cond": "MIXED_COMMUNITY",
+  "conf": "high",
+  "cohort": "hbn_ds005516",
+  "note": "Healthy Brain Network: transdiagnostic paediatric sample. participants.tsv has p_factor, attention, internalizing and externalizing scores; clinical diagnoses require the HBN data-use agreement."
+ },
+ "ds002181": {
+  "cond": "MIXED_COMMUNITY",
+  "conf": "medium",
+  "note": "Bangladeshi infant/toddler birth cohorts in a study of stunting."
+ },
+ "ds003602": {
+  "cond": "MIXED_COMMUNITY",
+  "conf": "medium",
+  "note": "Women twins studied for childhood sexual abuse and problem drinking; group status not in participants.tsv."
+ },
+ "ds004019": {
+  "col": "WS",
+  "map": {
+   "O": "OBESITY",
+   "N-O": "HEALTHY"
+  },
+  "conf": "high",
+  "cohort": "acnc_obesity",
+  "note": "WS = weight status: O obese, N-O non-obese preteens."
+ },
+ "ds004151": {
+  "col": "WS",
+  "map": {
+   "O": "OBESITY",
+   "N-O": "HEALTHY"
+  },
+  "conf": "high",
+  "cohort": "acnc_obesity"
+ },
+ "ds008003": {
+  "cond": "NOT_REPORTED",
+  "conf": "medium",
+  "note": "README: 23 misophonic + 32 controls, but participants.tsv carries no group labels."
+ },
+ "ds007347": {
+  "cond": "CANCER_PAIN",
+  "conf": "high",
+  "intervention": "focused ultrasound mesencephalotomy"
+ },
+ "ds006866": {
+  "cond": "HEALTHY",
+  "conf": "medium",
+  "note": "Non-clinical adults with loneliness/social anxiety/depression questionnaires."
+ }
+}

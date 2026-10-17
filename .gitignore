@@ -1,0 +1,7 @@
+*.sqlite
+__pycache__/
+*.pyc
+.venv/
+raw/
+raw_extra/
+inventory/
