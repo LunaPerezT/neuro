@@ -63,14 +63,20 @@ Reunir en un único recurso todos los datos públicos de neurociencia humana, si
 
 ## Fases
 
-1. Inventario de OpenNeuro y emparejamiento multimodal (en curso).
-2. Deduplicación y estudios.
-3. Fenotipos de todas las modalidades, extendiendo la anotación del EEG.
+1. Inventario de OpenNeuro y emparejamiento multimodal. **Hecho**: 1.821 datasets, más 9.442 personas con datos solo en `derivatives/`.
+2. Deduplicación y estudios. **Hecho**:
+   - Por hash de contenido.
+   - Por metadatos (README, nombre, edad y sexo): duplicados, derivados y cohortes.
+   - Por IDs dentro de una cohorte.
+3. Fenotipos de todas las modalidades. **Hecho** (v1): 110 condiciones SNOMED y 89.243 personas únicas. Ver `fenotipos_openneuro_v1.md`.
 4. Parámetros técnicos y tareas.
 5. Cola larga por publicaciones.
 6. Carga en Supabase y publicación del superdataset en GitHub.
 
+## Repositorio
+
+Código y tablas en https://github.com/LunaPerezT/neuro (sin licencia).
+
 ## Pendiente de la usuaria
 
-- Crear el repositorio vacío en GitHub: el conector no puede crear repositorios.
 - Aprobar la creación del proyecto en Supabase (puede tener coste).
