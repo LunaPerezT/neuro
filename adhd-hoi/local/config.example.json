@@ -1,0 +1,12 @@
+{
+  "workdir": "~/neuro_adhd",
+  "brainlife_project": "PEGA_AQUI_EL_ID_DEL_PROYECTO",
+  "priority_max": 1,
+  "upload_batch": 8,
+  "multiecho": "oc",
+  "common_tr": 2.0,
+  "fd_thresh": 0.5,
+  "min_minutes": 4.0,
+  "max_mean_fd": 0.5,
+  "matched_T": 120
+}

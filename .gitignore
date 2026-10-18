@@ -5,3 +5,5 @@ __pycache__/
 raw/
 raw_extra/
 inventory/
+adhd-hoi/local/config.json
+.pytest_cache/
