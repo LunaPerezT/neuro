@@ -1,6 +1,6 @@
 # openneuro-mcp
 
-Servidor MCP para [OpenNeuro](https://openneuro.org), el archivo abierto de datos de neuroimagen en formato BIDS (MRI, fMRI, EEG, MEG, iEEG, PET). Está pensado para que un agente pueda **hacer un censo del archivo completo y bajar al nivel de cada participante**: quién es paciente, quién es control y cómo lo indica cada dataset.
+Servidor MCP para [OpenNeuro](https://openneuro.org), el archivo abierto de datos de neuroimagen en formato BIDS (MRI, fMRI, EEG, MEG, iEEG, PET). Permite **hacer un censo del archivo completo y bajar al nivel de cada participante**: quién es paciente, quién es control y cómo lo indica cada dataset.
 
 Todas las herramientas son de solo lectura.
 
@@ -23,12 +23,12 @@ Todas las herramientas son de solo lectura.
 ## Instalación
 
 ```bash
-pip install git+https://github.com/LunaPerezT/openneuro-mcp.git
+pip install "git+https://github.com/LunaPerezT/neuro.git#subdirectory=openneuro-mcp"
 # o, desde una copia local:
 pip install -e .
 ```
 
-Funciona con las versiones 1.x y 2.x del SDK de MCP para Python, así que convive con `langchain-mcp-adapters`.
+Funciona con las versiones 1.x y 2.x del SDK de MCP para Python.
 
 ### Claude Desktop
 
@@ -45,22 +45,6 @@ Añade esto a `claude_desktop_config.json`:
 ```
 
 Si `openneuro-mcp` no está en el PATH de la app, usa la ruta completa, por ejemplo `/Users/<tu-usuario>/.venv/bin/openneuro-mcp`.
-
-### Deep Agents / LangGraph
-
-```python
-import os
-from langchain_mcp_adapters.client import MultiServerMCPClient
-from deepagents import create_deep_agent
-
-client = MultiServerMCPClient(
-    {"openneuro": {"command": "openneuro-mcp", "args": [], "transport": "stdio", "env": dict(os.environ)}}
-)
-tools = await client.get_tools()
-agent = create_deep_agent(model="anthropic:claude-sonnet-5-5", tools=tools, system_prompt="...")
-```
-
-Pasa `env`: por defecto el lanzador stdio entrega al servidor un entorno mínimo y se pierden los ajustes de proxy. El ejemplo completo, con un subagente que revisa participantes, está en [`examples/deep_agent_census.py`](examples/deep_agent_census.py).
 
 ### Como servicio HTTP
 

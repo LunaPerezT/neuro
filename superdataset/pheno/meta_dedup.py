@@ -3,9 +3,9 @@ identical (age, sex) multisets in participants.tsv, identical dataset names. Out
 import csv, hashlib, json, re, sys
 from collections import Counter, defaultdict
 from pathlib import Path
-sys.path.insert(0, "/home/claude/openneuro-mcp/src")
+ROOT = Path(__file__).resolve().parents[1]          # superdataset/
+sys.path.insert(0, str(ROOT.parent / "openneuro-mcp" / "src"))
 from openneuro_mcp.bids import parse_tsv
-ROOT = Path("/home/claude/superdataset")
 census = {r["id"]: r for r in json.load(open(ROOT / "census_all.json"))}
 ids = [l.strip() for l in open(ROOT / "ids_human.txt") if l.strip()]
 inv = Counter(r["dataset_id"] for r in csv.DictReader(open(ROOT / "inventory/subjects.csv")))

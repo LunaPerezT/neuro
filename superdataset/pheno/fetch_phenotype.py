@@ -1,9 +1,9 @@
 """Fetch phenotype/ files and top-level metadata (participants, README, CHANGES, *.tsv/*.json) for datasets.
-Usage: python fetch_phenotype.py ids.txt  -> /home/claude/superdataset/meta/raw_extra/<ds>/..."""
+Usage: python fetch_phenotype.py ids.txt  -> superdataset/meta/raw_extra/<ds>/..."""
 import json, subprocess, sys, tempfile, urllib.request
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
-OUT = Path("/home/claude/superdataset/meta/raw_extra")
+OUT = Path(__file__).resolve().parents[1] / "meta" / "raw_extra"
 MAXB = 5_000_000
 
 def want(path):

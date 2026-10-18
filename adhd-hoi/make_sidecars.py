@@ -2,7 +2,7 @@
 so the PC does not need to resolve BIDS inheritance."""
 import gzip, json
 import pandas as pd
-from select_subjects import MIRRORS, git, merged_sidecar
+from select_subjects import git, merged_sidecar, mirror
 
 F = pd.read_csv("data/files.csv", dtype=str).fillna("")
 S = pd.read_csv("data/subjects.csv", dtype=str).fillna("")
@@ -11,8 +11,8 @@ F = F[F.dataset_id.isin(up) & F.role.isin(["t1w", "bold", "fmap"]) & F.path.str.
 n = 0
 with gzip.open("data/sidecars.jsonl.gz", "wt") as out:
     for ds, grp in F.groupby("dataset_id"):
-        tree = git(MIRRORS / ds, "ls-tree", "-r", "--name-only", "HEAD").splitlines()
+        tree = git(mirror(ds), "ls-tree", "-r", "--name-only", "HEAD").splitlines()
         for p in grp.path:
-            out.write(json.dumps({"dataset_id": ds, "path": p, "meta": merged_sidecar(MIRRORS / ds, tree, p)}) + "\n")
+            out.write(json.dumps({"dataset_id": ds, "path": p, "meta": merged_sidecar(mirror(ds), tree, p)}) + "\n")
             n += 1
 print(n, "sidecars")

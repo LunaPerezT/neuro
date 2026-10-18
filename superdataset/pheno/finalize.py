@@ -2,9 +2,10 @@
 import csv, json, sqlite3
 from collections import Counter
 from pathlib import Path
-OUT = Path("out")
+HERE = Path(__file__).resolve().parent
+OUT = HERE / "out"
 csv.field_size_limit(10**9)
-snomed = json.load(open("conditions_snomed.json"))
+snomed = json.load(open(HERE / "conditions_snomed.json"))
 labels = json.load(open(OUT / "condition_labels.json"))
 P = list(csv.DictReader(open(OUT / "participants.csv")))
 used = Counter(p["condition"] for p in P if p["counted"] == "True")

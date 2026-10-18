@@ -14,7 +14,7 @@ from .client import OpenNeuroClient, OpenNeuroError
 
 try:  # MCP Python SDK v2
     from mcp.server import MCPServer
-except ImportError:  # MCP Python SDK v1 (e.g. when installed next to langchain-mcp-adapters)
+except ImportError:  # MCP Python SDK v1
     from mcp.server.fastmcp import FastMCP as MCPServer  # type: ignore[no-redef]
 from mcp.types import ToolAnnotations
 

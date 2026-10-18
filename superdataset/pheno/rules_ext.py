@@ -1,6 +1,6 @@
 """Expert phenotype rules for non-EEG OpenNeuro datasets (MRI, fMRI, dMRI, MEG, iEEG, PET...).
 
-Same format as the EEG rules (eeg-annotation/rules.py), plus:
+Same format as the EEG rules (rules_eeg.py), plus:
   default        condition for values not in `map` (instead of NOT_REPORTED)
   multi          {column: {value: COND}} secondary diagnoses (comorbidities); if the primary label is
                  HEALTHY and a secondary diagnosis is present, the first one becomes primary

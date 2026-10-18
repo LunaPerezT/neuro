@@ -3,7 +3,7 @@ and field maps of people with no fMRI/dMRI/ASL. Writes inventory/recordings_kept
 import csv
 from collections import Counter, defaultdict
 csv.field_size_limit(10**9)
-OUT = "/home/claude/superdataset"
+OUT = str(__import__("pathlib").Path(__file__).resolve().parents[1])  # superdataset/
 removed = {(r["dataset_id"], r["subject"]) for r in csv.DictReader(open(f"{OUT}/pheno/out/removed_structural_only.csv"))}
 gid, mods = {}, defaultdict(set)
 for p in csv.DictReader(open(f"{OUT}/pheno/out/participants.csv")):

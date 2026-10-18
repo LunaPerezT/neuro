@@ -1,13 +1,15 @@
 """Subjects whose imaging/electrophysiology exists only under derivatives/ (or sourcedata/), per dataset.
-Output: /home/claude/superdataset/inventory/derivative_subjects.csv (dataset_id, subject, datatypes, location)"""
+Output: superdataset/inventory/derivative_subjects.csv (dataset_id, subject, datatypes, location)"""
 import csv, re, subprocess, sys, tempfile
+from pathlib import Path
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor
 csv.field_size_limit(10**9)
+ROOT = Path(__file__).resolve().parents[1]          # superdataset/
 DT = {"anat", "func", "dwi", "fmap", "perf", "eeg", "meg", "ieeg", "pet", "beh", "nirs", "motion", "micr", "emg"}
 EXT = re.compile(r"\.(nii(\.gz)?|edf|bdf|set|fdt|vhdr|eeg|fif|con|sqd|mefd|nwb|snirf|mgz|gii|dlabel\.nii|mat)$")
 raw = defaultdict(set)
-for r in csv.DictReader(open("/home/claude/superdataset/inventory/subjects.csv")):
+for r in csv.DictReader(open(ROOT / "inventory/subjects.csv")):
     raw[r["dataset_id"]].add(r["subject"])
 
 def run(ds):
@@ -17,7 +19,7 @@ def run(ds):
                             f"https://github.com/OpenNeuroDatasets/{ds}.git", t + "/r"], check=True, capture_output=True, timeout=600)
             out = subprocess.run(["git", "-C", t + "/r", "ls-tree", "-r", "--name-only", "HEAD"], check=True,
                                  capture_output=True, text=True, timeout=600).stdout
-    except Exception as e:
+    except Exception:
         return ds, None
     found = defaultdict(set)
     for path in out.splitlines():
@@ -35,7 +37,7 @@ def run(ds):
     return ds, found
 
 ids = [l.strip() for l in open(sys.argv[1]) if l.strip()]
-with open("/home/claude/superdataset/inventory/derivative_subjects.csv", "w", newline="") as f:
+with open(ROOT / "inventory/derivative_subjects.csv", "w", newline="") as f:
     w = csv.writer(f); w.writerow(["dataset_id", "subject", "datatypes", "location"])
     with ThreadPoolExecutor(12) as pool:
         for i, (ds, found) in enumerate(pool.map(run, ids), 1):

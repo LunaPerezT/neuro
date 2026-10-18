@@ -18,7 +18,7 @@ from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
-OUT = Path("inventory")
+OUT = Path(__file__).resolve().parent / "inventory"
 DATA_EXT = (".nii", ".nii.gz", ".edf", ".bdf", ".set", ".fdt", ".vhdr", ".eeg", ".fif", ".ds", ".con", ".sqd",
             ".mefd", ".nwb", ".snirf", ".mat", ".tsv.gz", ".gii", ".dlabel.nii", ".mgz", ".tif", ".png")
 ENTITY_RE = re.compile(r"(?:^|_)(sub|ses|task|acq|run|rec|dir|echo|space|desc|mod|ce|trc|recording)-([A-Za-z0-9]+)")

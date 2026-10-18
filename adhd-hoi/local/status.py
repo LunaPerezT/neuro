@@ -5,8 +5,6 @@
 """
 import argparse
 
-import pandas as pd
-
 from common import State, load_config, subjects
 from process import brainlife_index
 

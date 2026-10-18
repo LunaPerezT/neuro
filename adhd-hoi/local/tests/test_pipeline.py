@@ -1,5 +1,6 @@
 """End-to-end checks of the PC pipeline on synthetic data (no network needed if atlases are cached)."""
 import json
+import os
 import shutil
 import sys
 from pathlib import Path
@@ -15,16 +16,15 @@ import denoise as D  # noqa: E402
 import process as P  # noqa: E402
 from stage_upload import optimal_combination  # noqa: E402
 
-ATLAS_CACHE = Path("/tmp/claude-0/atlas")
+ATLAS_CACHE = Path(os.environ.get("NEURO_ATLAS_CACHE", "~/.cache/neuro/atlas")).expanduser()  # optional offline copy
 
 
 @pytest.fixture(scope="module")
 def cfg(tmp_path_factory):
     wd = tmp_path_factory.mktemp("wd")
     (wd / "atlas").mkdir()
-    for f in ATLAS_CACHE.glob("*"):
+    for f in ATLAS_CACHE.glob("*"):          # otherwise load_atlas downloads the atlases from GitHub
         shutil.copy(f, wd / "atlas" / f.name)
-    shutil.copy(ATLAS_CACHE / "Schaefer400_7N.txt", wd / "atlas" / "Schaefer2018_400Parcels_7Networks_order.txt")
     from common import DEFAULTS
     c = dict(DEFAULTS); c["workdir"] = wd
     for s in ("results", "tmp", "logs", "cache"):

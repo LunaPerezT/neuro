@@ -5,7 +5,7 @@ Inputs
   linked/people.csv             global person ids (content-hash linking, link_people.py)
   meta/raw, meta/raw_extra      participants.tsv / phenotype files per dataset
   meta/profiles.jsonl           triage per dataset
-  eeg-annotation/rules.py       expert rules for EEG datasets (v1)
+  pheno/rules_eeg.py            expert rules for EEG datasets
   pheno/rules_ext.py            expert rules for all other reviewed datasets
 
 Outputs (pheno/out/)
@@ -22,12 +22,11 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 csv.field_size_limit(10**9)
-ROOT = Path("/home/claude/superdataset")
-sys.path.insert(0, "/home/claude/openneuro-mcp/src")
-sys.path.insert(0, "/home/claude/eeg-annotation")
+ROOT = Path(__file__).resolve().parents[1]          # superdataset/
+sys.path.insert(0, str(ROOT.parent / "openneuro-mcp" / "src"))
 sys.path.insert(0, str(ROOT / "pheno"))
 from openneuro_mcp.bids import parse_tsv  # noqa: E402
-import rules as eeg_rules  # noqa: E402
+import rules_eeg as eeg_rules  # noqa: E402
 import rules_ext  # noqa: E402
 
 OUT = ROOT / "pheno" / "out"

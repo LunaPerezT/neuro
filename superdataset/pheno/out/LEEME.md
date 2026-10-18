@@ -1,6 +1,6 @@
 # Fenotipos por participante de todo OpenNeuro humano (v1.1, 18-10-2026)
 
-Anotación clínica de **todos los participantes con datos** en los **1.821 datasets humanos** de OpenNeuro y en todas las modalidades (EEG, MEG, iEEG, MRI, fMRI, dMRI, PET, ASL, fNIRS). Extiende la anotación de EEG v1 al resto de modalidades.
+Anotación clínica de **todos los participantes con datos** en los **1.821 datasets humanos** de OpenNeuro y en todas las modalidades (EEG, MEG, iEEG, MRI, fMRI, dMRI, PET, ASL, fNIRS).
 
 ## Archivos
 
@@ -51,7 +51,7 @@ La MRI estructural (T1w, T2w, FLAIR, TOF y demás imágenes de `anat/`) solo se 
 
 1. **Inventario.** Inventario BIDS de los 1.821 datasets: clon git sin datos de los espejos OpenNeuroDatasets.
    - Se suman 9.442 personas cuyos datos solo están en `derivatives/`.
-2. **Revisión experta.** Reglas manuales para 729 datasets no-EEG con señales clínicas, más las 195 reglas de EEG v1.
+2. **Revisión experta.** Reglas manuales para 729 datasets no-EEG con señales clínicas, más 195 reglas para datasets de EEG.
    - Los demás se etiquetan como "sano" (dxStatus de OpenNeuro) o "presunto sano".
 3. **Segunda pasada.** Lectura de los archivos `phenotype/` de los datasets dudosos, como NIMH EDB o los K-SADS de NIMH, y búsqueda de términos clínicos en los títulos de los datasets automáticos.
 4. **Normalización.** 110 categorías con códigos SNOMED CT verificados en Snowstorm.

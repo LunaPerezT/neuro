@@ -1,14 +1,13 @@
 # neuro
 
-Recurso unificado de datos públicos de neurociencia humana (EEG, MEG, iEEG, MRI, fMRI, dMRI, PET, fNIRS) con fenotipos armonizados por participante y personas vinculadas entre datasets y modalidades. Construido con agentes (Deep Agents + LangGraph + LangSmith) y servidores MCP.
+Recurso unificado de datos públicos de neurociencia humana, y primer análisis que lo usa.
 
-| Carpeta | Qué es |
-|---|---|
-| `openneuro-mcp/` | Servidor MCP de OpenNeuro: búsqueda, censo masivo, participantes, archivos y GraphQL de solo lectura |
-| `annotation-eeg/` | Anotación clínica por participante de los 463 datasets de EEG de OpenNeuro (v1) |
-| `superdataset/` | Inventario BIDS de los 1.821 datasets humanos, vinculación de personas (hash de contenido + cohortes) y fenotipos de todas las modalidades (`pheno/out/LEEME.md`) |
-| `adhd-hoi/` | Piloto TDAH vs controles: interacciones de orden superior (O-información, ΦID) en rs-fMRI de 431 personas; preprocesado en brainlife.io + análisis local reanudable |
+| Carpeta | Qué es | Estado |
+|---|---|---|
+| [`openneuro-mcp/`](openneuro-mcp/) | Servidor MCP de solo lectura para OpenNeuro: censo, búsqueda, participantes, archivos, GraphQL | Terminado. Lo usan los demás scripts |
+| [`superdataset/`](superdataset/) | Los 1.821 datasets humanos de OpenNeuro: inventario BIDS, personas vinculadas entre datasets y fenotipo clínico armonizado (SNOMED CT) | v1.1 terminada. Las tablas están en `superdataset/pheno/out/` |
+| [`adhd-hoi/`](adhd-hoi/) | Piloto: TDAH frente a controles con interacciones de orden superior (O-información, ΦID) en rs-fMRI. Son 431 personas de 5 estudios, preprocesadas en brainlife.io y analizadas en local | Código probado. Falta ejecutarlo (pasos 1–4 de su README) |
 
-Los ficheros grandes (inventario de 159 MB, base SQLite) no están en el repositorio; se regeneran con los scripts.
+Requisitos: Python ≥ 3.10. Cada carpeta tiene su README con los pasos para reproducirla.
 
 Sin licencia: todos los derechos reservados por la autora salvo indicación contraria.

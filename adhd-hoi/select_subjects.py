@@ -1,30 +1,38 @@
 """Builds the subject list and per-subject file manifest for the ADHD-vs-controls HOI pilot.
 
-Runs on the project machine (needs the superdataset outputs and git mirrors of the datasets).
-Writes:
-  data/subjects.csv  one row per person: dataset, subject, group, age, sex, comorbidity, source of preprocessed data
-  data/files.csv     raw files to stage per subject (OpenNeuro path, size, role) or XCP-D files to fetch
+Needs the superdataset outputs (superdataset/pheno/out, inventory/, meta/); clones the OpenNeuro git mirrors
+it needs into $NEURO_MIRRORS (no imaging data is downloaded). Writes:
+  data/subjects.csv  one row per person: dataset, subject, group, age, sex, comorbidity, TR, brainlife label
+  data/files.csv     files to stage per person (OpenNeuro path, size, role); role "xcpd" = GRMPY benchmark files
   data/phenotype_<ds>.csv  all participants/phenotype columns for the selected subjects (wide)
 """
-import csv
 import json
+import os
 import re
 import subprocess
-import sys
 from collections import defaultdict
 from pathlib import Path
 
 import pandas as pd
 
-ROOT = Path("/home/claude/superdataset")
-MIRRORS = Path("/tmp/claude-0/sz")          # blob:none clones of OpenNeuroDatasets/<ds>
-DERIV = Path("/tmp/claude-0/deriv")         # blob:none clones of derivative datasets
+REPO = Path(__file__).resolve().parents[1]
+ROOT = REPO / "superdataset"                # needs its pheno/out, inventory/ and meta/ (see superdataset/README.md)
+MIRRORS = Path(os.environ.get("NEURO_MIRRORS", "~/.cache/neuro/mirrors")).expanduser()   # blob-less git clones
 OUT = Path(__file__).parent / "data"
 DATASETS = ["ds000030", "ds005754", "ds007116", "ds007182", "ds008579"]
 XCPD = {"ds008579": "ds008601"}             # authors' XCP-D series on OpenNeuro: used only as a benchmark
 BRAINLIFE_MIRRORED = {"ds000030"}           # importable directly from brainlife.io/datasets
 TARGET = "ADHD"
-sys.path.insert(0, str(ROOT / "pheno"))
+
+
+def mirror(ds: str) -> Path:
+    """Blob-less clone of github.com/OpenNeuroDatasets/<ds> (tree and small text files only)."""
+    d = MIRRORS / ds
+    if not d.exists():
+        d.parent.mkdir(parents=True, exist_ok=True)
+        subprocess.run(["git", "clone", "-q", "--filter=blob:none", "--no-checkout",
+                        f"https://github.com/OpenNeuroDatasets/{ds}.git", str(d)], check=True)
+    return d
 
 
 def git(ds_dir, *args):
@@ -153,7 +161,7 @@ def main():
     rec = rec[rec.dataset_id.isin(DATASETS)]
     subjects, files = [], []
     for ds in DATASETS:
-        ds_dir = MIRRORS / ds
+        ds_dir = mirror(ds)
         tree = [p for p in git(ds_dir, "ls-tree", "-r", "--name-only", "HEAD").splitlines()]
         by_sub = defaultdict(list)
         for p in tree:
@@ -162,7 +170,7 @@ def main():
         top = [p for p in tree if "/" not in p and (p.endswith(".json") or p in ("participants.tsv",))]
         xcpd_tree = []
         if ds in XCPD:
-            xcpd_tree = git(DERIV / XCPD[ds], "ls-tree", "-r", "--name-only", "HEAD").splitlines()
+            xcpd_tree = git(mirror(XCPD[ds]), "ls-tree", "-r", "--name-only", "HEAD").splitlines()
         for _, r in P[P.dataset_id == ds].iterrows():
             has_target = r.condition == TARGET or TARGET in r.other_conditions.split(";")
             if has_target:
@@ -209,7 +217,7 @@ def main():
                 row["has_xcpd_benchmark"] = any("4S456Parcels" in p for p in want)
                 for p in want:
                     files.append({"dataset_id": ds, "subject": r.subject, "repo": XCPD[ds], "path": p,
-                                  "role": "xcpd", "bytes": annex_size(DERIV / XCPD[ds], p)})
+                                  "role": "xcpd", "bytes": annex_size(mirror(XCPD[ds]), p)})
             subjects.append(row)
         for p in top:
             files.append({"dataset_id": ds, "subject": "", "repo": ds, "path": p, "role": "top_level", "bytes": 0})

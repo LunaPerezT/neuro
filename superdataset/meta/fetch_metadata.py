@@ -1,4 +1,4 @@
-"""Download participant-level metadata for every dataset in census_eeg.json from the
+"""Download participant-level metadata for every dataset listed in a census JSON (meta/census_human.json) from the
 OpenNeuroDatasets GitHub mirror (git-tracked text files only)."""
 
 import asyncio
@@ -10,7 +10,8 @@ import httpx
 
 BASE = "https://raw.githubusercontent.com/OpenNeuroDatasets"
 FILES = ["participants.tsv", "participants.json", "dataset_description.json", "README", "README.md", "README.txt"]
-OUT = Path("raw")
+ROOT = Path(__file__).resolve().parents[1]          # superdataset/
+OUT = ROOT / "meta" / "raw"
 
 
 async def fetch(client: httpx.AsyncClient, sem: asyncio.Semaphore, ds: str, name: str) -> tuple[str, str, int]:
@@ -40,7 +41,7 @@ async def main() -> None:
     status: dict[str, dict[str, int]] = {}
     for ds, name, code in results:
         status.setdefault(ds, {})[name] = code
-    json.dump(status, open("fetch_status.json", "w"), indent=1)
+    json.dump(status, open(ROOT / "meta" / "fetch_status.json", "w"), indent=1)
     have = lambda f: sum(1 for s in status.values() if s.get(f) == 200)
     print(f"datasets: {len(status)}")
     for f in FILES:

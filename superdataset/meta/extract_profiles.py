@@ -11,10 +11,11 @@ import sys
 from collections import Counter
 from pathlib import Path
 
-sys.path.insert(0, "/home/claude/openneuro-mcp/src")
+ROOT = Path(__file__).resolve().parents[1]          # superdataset/
+sys.path.insert(0, str(ROOT.parent / "openneuro-mcp" / "src"))
 from openneuro_mcp.bids import NA_VALUES, id_prefix_groups, parse_sidecar, parse_tsv  # noqa: E402
 
-RAW = Path("raw")
+RAW = ROOT / "meta" / "raw"
 GROUP_HINTS = ("group", "diagnos", "dx", "condition", "status", "patient", "control", "cohort", "disease",
                "clinical", "population", "category", "class", "health", "pathology", "disorder", "type", "arm",
                "drug", "treatment", "medication", "label", "subject_type", "participant_type", "sample")
@@ -119,11 +120,11 @@ def triage(p: dict) -> str:
 
 
 def main() -> None:
-    census = json.load(open("census_human.json"))
+    census = json.load(open(ROOT / "meta" / "census_human.json"))
     profiles = [profile(r) for r in census]
     for p in profiles:
         p["triage"] = triage(p)
-    with open("profiles.jsonl", "w") as f:
+    with open(ROOT / "meta" / "profiles.jsonl", "w") as f:
         for p in profiles:
             f.write(json.dumps(p, ensure_ascii=False) + "\n")
     t = Counter(p["triage"] for p in profiles)

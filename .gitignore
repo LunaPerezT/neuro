@@ -1,9 +1,17 @@
-*.sqlite
+# Python
 __pycache__/
 *.pyc
 .venv/
-raw/
-raw_extra/
-inventory/
-adhd-hoi/local/config.json
 .pytest_cache/
+# Regenerable working data of superdataset/ (see superdataset/README.md)
+*.sqlite
+superdataset/census_all.json
+superdataset/ids_human.txt
+superdataset/inventory
+superdataset/linked
+superdataset/meta/raw
+superdataset/meta/raw_extra
+superdataset/meta/*.json
+superdataset/meta/*.jsonl
+# Local settings
+adhd-hoi/local/config.json

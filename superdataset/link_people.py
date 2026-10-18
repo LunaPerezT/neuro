@@ -11,12 +11,11 @@ Outputs (linked/):
 """
 
 import csv
-import sys
 from collections import Counter, defaultdict
 from pathlib import Path
 
 csv.field_size_limit(10**9)
-INV, OUT = Path("inventory"), Path("linked")
+INV, OUT = Path(__file__).resolve().parent / "inventory", Path(__file__).resolve().parent / "linked"
 MIN_SHARED = 2          # files a subject must share to be linked to another dataset's subject
 SUBSET_RATIO = 0.9      # share of the smaller dataset's files found in the larger one
 MODALITY = {"anat": "MRI", "func": "fMRI", "dwi": "dMRI", "fmap": "MRI", "perf": "ASL", "eeg": "EEG", "meg": "MEG",

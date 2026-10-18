@@ -10,7 +10,6 @@ import hoi_metrics as H  # noqa: E402
 
 
 def gauss_entropy(C):
-    d = C.shape[0]
     return 0.5 * np.linalg.slogdet(2 * np.pi * np.e * C)[1]
 
 
