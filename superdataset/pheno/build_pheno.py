@@ -239,6 +239,7 @@ def main() -> None:
         })
 
     link_cohorts_by_id(participants)
+    participants, datasets = drop_structural_only(participants, datasets)
     write(OUT / "participants.csv", participants)
     write(OUT / "datasets.csv", datasets)
     ranking = rank(participants, datasets)
@@ -250,6 +251,42 @@ def main() -> None:
     print("roles:", Counter(p["role"] for p in counted).most_common())
     unknown = sorted({p["condition"] for p in participants} - set(CONDITIONS))
     print("conditions without label:", unknown)
+
+
+# Techniques for which a structural MRI of the same person is useful (registration, head/source
+# models, electrode or optode localisation, attenuation correction, tractography).
+OTHER_TECHNIQUES = {"fMRI", "dMRI", "ASL", "EEG", "MEG", "iEEG", "PET", "fNIRS"}
+
+
+def drop_structural_only(participants: list[dict], datasets: list[dict]) -> tuple[list[dict], list[dict]]:
+    """Remove structural MRI that no other technique of the same person can use.
+
+    A person's structural MRI is kept when that person (global id, i.e. across all datasets) has data
+    from any OTHER_TECHNIQUES. Rows whose only data is structural MRI for a person without any other
+    technique are removed; datasets left without rows are removed. Everything removed is listed in
+    removed_structural_only.csv so the decision can be audited or reverted."""
+    person_mods = defaultdict(set)
+    for p in participants:
+        person_mods[p["global_id"]].update(filter(None, p["modalities"].split(";")))
+    keep, removed = [], []
+    for p in participants:
+        mods = set(filter(None, p["modalities"].split(";")))
+        if "MRI" in mods and not (person_mods[p["global_id"]] & OTHER_TECHNIQUES):
+            removed.append(p)
+        else:
+            keep.append(p)
+    left = Counter(p["dataset_id"] for p in keep)
+    gone = Counter(p["dataset_id"] for p in removed)
+    write(OUT / "removed_structural_only.csv", [
+        {"dataset_id": p["dataset_id"], "subject": p["subject"], "global_id": p["global_id"],
+         "condition": p["condition"], "role": p["role"], "counted": p["counted"],
+         "dataset_removed": p["dataset_id"] not in left} for p in removed])
+    kept_ds = [dict(d, n_subjects_with_data=left[d["dataset_id"]], n_removed_structural_only=gone.get(d["dataset_id"], 0))
+               for d in datasets if d["dataset_id"] in left]
+    n_people = len({p["global_id"] for p in removed if p["counted"]})
+    print(f"structural-only removed: {len(removed)} rows, {n_people} counted people, "
+          f"{len(datasets) - len(kept_ds)} whole datasets")
+    return keep, kept_ds
 
 
 def link_cohorts_by_id(participants: list[dict]) -> None:
@@ -324,7 +361,8 @@ def rank(participants: list[dict], datasets: list[dict]) -> list[dict]:
         person_mods[p["global_id"] or f"{p['dataset_id']}:{p['subject']}"].update(filter(None, p["modalities"].split(";")))
     unresolved = defaultdict(int)
     for d in datasets:
-        if d["published_counts"] and not d["excluded_reason"]:
+        # published group sizes describe the whole release; skip them once part of it was removed
+        if d["published_counts"] and not d["excluded_reason"] and not d.get("n_removed_structural_only"):
             for c, n in json.loads(d["published_counts"]).items():
                 unresolved[c] = max(unresolved[c], n)  # cohort releases of the same people: take the largest
     out = []

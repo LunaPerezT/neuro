@@ -14,6 +14,7 @@ Reunir en un único recurso todos los datos públicos de neurociencia humana, si
 2. **Una persona, una vez.** Cada conjunto de personas aparece una sola vez. Los duplicados se detectan con evidencia (hash de contenido, DOI, participantes) y se registran, no se borran.
 3. **Trazabilidad total.** Cada etiqueta guarda su valor original, su fuente y su nivel de confianza.
 4. **Solo humanos** en esta versión.
+5. **MRI estructural solo como apoyo.** Un T1/T2/FLAIR se conserva únicamente si la misma persona tiene otra técnica (fMRI, dMRI, ASL, EEG, MEG, iEEG, PET o fNIRS). Lo retirado queda listado en `removed_structural_only.csv`.
 
 ## Fuentes y orden de incorporación
 
@@ -68,7 +69,7 @@ Reunir en un único recurso todos los datos públicos de neurociencia humana, si
    - Por hash de contenido.
    - Por metadatos (README, nombre, edad y sexo): duplicados, derivados y cohortes.
    - Por IDs dentro de una cohorte.
-3. Fenotipos de todas las modalidades. **Hecho** (v1): 110 condiciones SNOMED y 89.243 personas únicas. Ver `fenotipos_openneuro_v1.md`.
+3. Fenotipos de todas las modalidades. **Hecho** (v1): 110 condiciones SNOMED y 84.267 personas únicas tras retirar la MRI solo estructural. Ver `fenotipos_openneuro_v1.md`.
 4. Parámetros técnicos y tareas.
 5. Cola larga por publicaciones.
 6. Carga en Supabase y publicación del superdataset en GitHub.

@@ -1,32 +1,32 @@
 condition,label,snomed_code,snomed_term,snomed_match,counted_rows
-AD,Alzheimer's disease,26929004,Alzheimer's disease,exact,146
-ADHD,Attention deficit hyperactivity disorder,406506008,Attention deficit hyperactivity disorder,exact,263
+AD,Alzheimer's disease,26929004,Alzheimer's disease,exact,91
+ADHD,Attention deficit hyperactivity disorder,406506008,Attention deficit hyperactivity disorder,exact,262
 AMBLYOPIA,Amblyopia,387742006,Amblyopia,exact,34
-AMPUTATION,Limb amputation (with or without phantom limb pain),735928001,Acquired absence of entire limb,approximate,49
-ANEURYSM,Intracranial aneurysm,128609009,Intracranial aneurysm,exact,220
+AMPUTATION,Limb amputation (with or without phantom limb pain),735928001,Acquired absence of entire limb,approximate,48
+ANEURYSM,Intracranial aneurysm,128609009,Intracranial aneurysm,exact,0
 ANIMAL,Non-human animal (excluded from human counts),,,,0
 ANOREXIA,Anorexia nervosa,56882008,Anorexia nervosa,exact,0
 ANXIETY,Anxiety disorder,197480006,Anxiety disorder,exact,197
 APHANTASIA,Aphantasia (non-clinical trait),,,no code,0
 ASD,Autism spectrum disorder,35919005,Autism spectrum disorder,exact,227
 AUD,Alcohol use disorder,1336085007,Disorder due to alcohol use,exact,30
-BIPOLAR,Bipolar disorder,13746004,Bipolar disorder,exact,74
+BIPOLAR,Bipolar disorder,13746004,Bipolar disorder,exact,68
 BLINDNESS,Blindness,193709009,Bilateral acquired blindness of eyes,approximate (congenital blindness possible),19
 BPD,Borderline personality disorder,20010003,Borderline personality disorder,exact,55
 BRAIN_ABSCESS,Brain abscess,441806004,Abscess of brain,exact,2
 BRAIN_TUMOR,Brain tumour (mixed types),126952004,Neoplasm of brain,broader,202
 BURN,Burn injury (intensive care),284196006,Burn of skin,exact,9
-CAD,Coronary artery disease,53741008,Coronary arteriosclerosis,exact,46
+CAD,Coronary artery disease,53741008,Coronary arteriosclerosis,exact,45
 CANCER_PAIN,Cancer pain (head and neck),735935009,Chronic pain due to malignant neoplastic disease,exact,5
-CANNABIS_UD,Cannabis use disorder,1336200007,Cannabis use disorder,approximate,20
+CANNABIS_UD,Cannabis use disorder,1336200007,Cannabis use disorder,approximate,0
 CHRONIC_LBP,Chronic low back pain,278860009,Chronic low back pain,exact,140
-CHRONIC_PAIN,Chronic pain (mixed/unspecified),82423001,Chronic pain,exact,20
-CHR_PSYCHOSIS,Clinical high risk for psychosis (prodromal),247804008,Schizophrenic prodrome,approximate,93
+CHRONIC_PAIN,Chronic pain (mixed/unspecified),82423001,Chronic pain,exact,19
+CHR_PSYCHOSIS,Clinical high risk for psychosis (prodromal),247804008,Schizophrenic prodrome,approximate,92
 CLN3,CLN3 disease (juvenile Batten disease),61663001,Juvenile neuronal ceroid lipofuscinosis,exact,32
 CONDUCT,Conduct disorder,430909002,Conduct disorder,exact,0
 CORTICAL_MALFORMATION,Malformation of cortical development (heterotopia),1372773002,Congenital malformation of cortical development,broader,1
 COVID19,COVID-19 (post-infection),840539006,COVID-19,exact (history of infection),124
-CUD,Cocaine use disorder,1336231000,Cocaine use disorder,exact,127
+CUD,Cocaine use disorder,1336231000,Cocaine use disorder,exact,125
 DCM,Degenerative cervical myelopathy,202664003,Cervical myelopathy,broader,17
 DEAF,Deafness,15188001,Hearing loss,broader,117
 DEMENTIA,Dementia (unspecified type),52448006,Dementia,exact,13
@@ -34,22 +34,22 @@ DEPRESSION,"Depressive disorder (episode, unspecified severity/type)",35489007,D
 DMDD,Disruptive mood dysregulation disorder,715924009,Disruptive mood dysregulation disorder,exact,39
 DYSCALCULIA,Developmental dyscalculia (math learning difficulty),55640002,Dyscalculia,exact,30
 DYSLEXIA,Developmental dyslexia,59770006,Dyslexia,exact,99
-DYSTHYMIA,Persistent depressive disorder (dysthymia),78667006,Dysthymia,exact,13
+DYSTHYMIA,Persistent depressive disorder (dysthymia),78667006,Dysthymia,exact,0
 DYSTONIA,Focal dystonia,15802004,Dystonia,broader,67
-EPILEPSY,Epilepsy,84757009,Epilepsy,exact,3086
-ESSENTIAL_TREMOR,Essential tremor,609558009,Essential tremor,exact,17
+EPILEPSY,Epilepsy,84757009,Epilepsy,exact,2963
+ESSENTIAL_TREMOR,Essential tremor,609558009,Essential tremor,exact,12
 FEP,First-episode psychosis,69322001,Psychotic disorder,broader (no first-episode concept),81
 FIBROMYALGIA,Fibromyalgia,203082005,Fibromyalgia,exact,53
-FOCAL_LESION,Chronic focal brain lesion (mixed aetiology),1356879005,Localized lesion of brain,broader,204
+FOCAL_LESION,Chronic focal brain lesion (mixed aetiology),1356879005,Localized lesion of brain,broader,0
 FRAGILE_X,Fragile X syndrome,613003,Fragile X syndrome,exact,12
 FTD,Frontotemporal dementia,230270009,Frontotemporal dementia,exact,46
 GAD,Generalized anxiety disorder,21897009,Generalized anxiety disorder,exact,19
 GAMBLING,Gambling disorder,18085000,Compulsive gambling,exact,0
 GLAUCOMA,Glaucoma,23986001,Glaucoma,exact,37
-GLIOBLASTOMA,Glioblastoma,393563007,Glioblastoma multiforme,exact,381
+GLIOBLASTOMA,Glioblastoma,393563007,Glioblastoma multiforme,exact,18
 GLIOMA,Glioma (lower grade / non-GBM),393564001,Glioma,broader,34
 HAZARDOUS_DRINKING,"Hazardous / heavy drinking (community sample, not diagnosed AUD)",86933000,Heavy drinker,exact (finding),55
-HEALTHY,Healthy participant,102512003,Well adult,broader (also used for children/adolescents),39429
+HEALTHY,Healthy participant,102512003,Well adult,broader (also used for children/adolescents),38135
 HEARING_LOSS,Hearing loss,15188001,Hearing loss,exact,0
 HEMISPHERECTOMY,Adult with a single cerebral hemisphere (hemispherectomy),14247003,Cerebral hemispherectomy (procedure),approximate,0
 ICU,Critically ill patient (intensive care),,,no suitable concept (critical illness is a care setting),180
@@ -57,8 +57,8 @@ IRRITABILITY,Clinically significant irritability (youth),55929007,Feeling irrita
 KNEE_OA,Knee osteoarthritis,239873007,Osteoarthritis of knee,exact,93
 LEARNING_DISORDER,Specific learning disorder,161129001,Learning difficulties,exact (finding),92
 MCI,Mild cognitive impairment,386805003,Mild neurocognitive disorder,exact (synonym: mild cognitive impairment),60
-MDD,Major depressive disorder,370143000,Major depressive disorder,exact,209
-MENINGIOMA,Meningioma,393566004,Meningioma,exact,61
+MDD,Major depressive disorder,370143000,Major depressive disorder,exact,164
+MENINGIOMA,Meningioma,393566004,Meningioma,exact,58
 MISOPHONIA,Misophonia,1290516000,Misophonia,exact (no per-participant labels),0
 MIXED_COMMUNITY,Community sample with mixed or dimensional clinical status (diagnoses not shared),,,not a single condition,3261
 MND,Motor neuron disease,37340000,Motor neuron disease,exact,60
@@ -69,19 +69,19 @@ NEUROPATHIC_PAIN,Neuropathic pain,247398009,Neuropathic pain,exact,8
 NEUROSURGICAL,"Neurosurgical patient (epilepsy or brain tumour, unspecified)",,,no code,79
 NF1,Neurofibromatosis type 1,92824003,Neurofibromatosis type 1,exact,0
 NICOTINE_DEP,Tobacco/nicotine dependence (smoker),56294008,Nicotine dependence,approximate,22
-NOT_REPORTED,Clinical status not reported,,,,357
+NOT_REPORTED,Clinical status not reported,,,,302
 OBESITY,Obesity,414916001,Obesity,exact,56
 OB_AGENESIS,Absent olfactory bulbs (with preserved olfaction),771147003,Isolated arhinencephaly,approximate,4
-OCD,Obsessive-compulsive disorder,191736004,Obsessive-compulsive disorder,exact,56
+OCD,Obsessive-compulsive disorder,191736004,Obsessive-compulsive disorder,exact,55
 ODD,Oppositional defiant disorder,18941000,Oppositional defiant disorder,exact,7
 ORTHOPEDIC,Orthopaedic impairment,928000,Disorder of musculoskeletal system,broader,7
 PANIC,Panic disorder,371631005,Panic disorder,exact,15
-PD,Parkinson's disease,49049000,Parkinson's disease,exact,1407
+PD,Parkinson's disease,49049000,Parkinson's disease,exact,1366
 PERIPHERAL_NERVE_INJURY,Peripheral nerve injury (upper limb),73590005,Injury of peripheral nerve,broader,25
 PHANTOM,"Phantom head (non-biological, excluded)",,,,0
-PITUITARY_ADENOMA,Pituitary adenoma,254956000,Pituitary adenoma,exact,50
+PITUITARY_ADENOMA,Pituitary adenoma,254956000,Pituitary adenoma,exact,0
 POST_COVID,Post-COVID-19 condition,1119304009,Chronic post-COVID-19 syndrome,exact,133
-PRESUMED_HEALTHY,No clinical label (non-clinical study),,,,34313
+PRESUMED_HEALTHY,No clinical label (non-clinical study),,,,32671
 PROCEDURE_PATIENT,Patient undergoing surgery or anaesthesia (intraoperative recording),,,no suitable concept (surgical/anaesthesia context),26
 PROLONGED_GRIEF,Prolonged grief disorder,723914003,Prolonged grief disorder,exact,30
 PROSOPAGNOSIA,Developmental prosopagnosia,18358003,Prosopagnosia,exact,49
@@ -95,7 +95,7 @@ SEPARATION_ANXIETY,Separation anxiety disorder,126943008,Separation anxiety,exac
 SOCIAL_ANXIETY,Social anxiety disorder,25501002,Social phobia,exact,4
 SPECIFIC_PHOBIA,Specific phobia (spiders),54587008,Simple phobia,exact,49
 SSPI,Severe speech and physical impairment (incl. ALS),86044005,Amyotrophic lateral sclerosis,partial (only some participants have ALS),5
-STROKE,Stroke,230690007,Cerebrovascular accident,exact,1557
+STROKE,Stroke,230690007,Cerebrovascular accident,exact,1446
 STROKE_WORKUP,Evaluated for suspected acute stroke (no acute ischaemic stroke recorded),,,no code,609
 SUBCLIN_DEPRESSION,"Elevated depressive symptoms (non-diagnosed, questionnaire-defined)",394924000,Symptoms of depression,"exact (finding, not a diagnosis)",92
 SUD,Substance use disorder,1306691007,Substance use disorder,exact,2
@@ -104,8 +104,8 @@ T1D,Type 1 diabetes mellitus,46635009,Type 1 diabetes mellitus,exact,31
 TBI,Traumatic brain injury,127295002,Traumatic brain injury,exact (mild cases: 110030002 Concussion injury of brain),244
 TIC,Tic disorder,568005,Tic disorder,exact,0
 TINNITUS,Tinnitus,60862001,Tinnitus,exact,48
-TOF,Tetralogy of Fallot (congenital heart disease),86299006,Tetralogy of Fallot,exact,30
+TOF,Tetralogy of Fallot (congenital heart disease),86299006,Tetralogy of Fallot,exact,0
 TRANSDIAGNOSTIC,"Psychiatric patient, mixed diagnoses (transdiagnostic sample)",74732009,Mental disorder,broader,645
-TRIGEMINAL_NEURALGIA,Trigeminal neuralgia,31681005,Trigeminal neuralgia,exact,238
-UNRESOLVED,"Patient or control, group not public per participant",,,no code,3148
+TRIGEMINAL_NEURALGIA,Trigeminal neuralgia,31681005,Trigeminal neuralgia,exact,236
+UNRESOLVED,"Patient or control, group not public per participant",,,no code,2221
 ZAN,Zoster-associated neuralgia,2177002,Postherpetic neuralgia,approximate (zoster-associated neuralgia also includes acute phase),32

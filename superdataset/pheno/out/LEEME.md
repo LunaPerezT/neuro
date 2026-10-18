@@ -1,4 +1,4 @@
-# Fenotipos por participante de todo OpenNeuro humano (v1, 17-10-2026)
+# Fenotipos por participante de todo OpenNeuro humano (v1.1, 18-10-2026)
 
 Anotación clínica de **todos los participantes con datos** en los **1.821 datasets humanos** de OpenNeuro y en todas las modalidades (EEG, MEG, iEEG, MRI, fMRI, dMRI, PET, ASL, fNIRS). Extiende la anotación de EEG v1 al resto de modalidades.
 
@@ -7,11 +7,12 @@ Anotación clínica de **todos los participantes con datos** en los **1.821 data
 | Archivo | Contenido |
 |---|---|
 | `neuro_openneuro.sqlite` | Todas las tablas en una base SQLite |
-| `participants.csv` | Una fila por persona y dataset (97.124 filas) |
+| `participants.csv` | Una fila por persona y dataset (91.354 filas) |
 | `datasets.csv` | Una fila por dataset: regla aplicada, cohorte, solapamiento, duplicado o derivado, intervención, avisos y notas |
 | `conditions.csv` | Las 110 categorías, con código SNOMED CT y tipo de correspondencia |
 | `ranking.csv` | Condición × modalidad: personas únicas (mínimo y máximo), número de datasets y personas multimodales |
 | `metadata_duplicate_candidates.csv` | Pares de datasets con README, nombre o (edad, sexo) idénticos, revisados a mano |
+| `removed_structural_only.csv` | Lo retirado por la regla de MRI estructural (abajo): 5.770 filas de 124 datasets, para auditarlo o revertirlo |
 
 ## Campos clave de `participants.csv`
 
@@ -36,6 +37,16 @@ Anotación clínica de **todos los participantes con datos** en los **1.821 data
 - `raw_label` y `label_source` guardan el valor original y su origen: columna, prefijo del ID, archivo de `phenotype/`, umbral o nivel de dataset.
 - `counted`: es falso en duplicados, derivados, animales, fantomas y datos de prueba.
 
+## Regla de MRI estructural (v1.1)
+
+La MRI estructural (T1w, T2w, FLAIR, TOF y demás imágenes de `anat/`) solo se conserva cuando sirve a otra técnica **de la misma persona**: fMRI, dMRI, ASL, EEG, MEG, iEEG, PET o fNIRS. Sirve para registro, modelos de cabeza y de fuentes, localización de electrodos u optodos, corrección de atenuación o tractografía.
+
+- La comprobación se hace por persona (`global_id`), no por dataset: un T1 de un dataset se conserva si esa persona tiene EEG o fMRI en otro.
+- Se retiran **4.976 personas** que solo tenían MRI estructural, y **124 datasets** que quedaban vacíos.
+  - Por ejemplo: glioblastoma multicéntrico, aneurismas en TOF-MRA, lesiones focales, adenoma de hipófisis, la parte de IDEAS sin difusión o el estudio de cannabis.
+- A nivel de archivo (`inventory/recordings_kept.csv`, no incluido en el repositorio por tamaño) se retiran 31.234 imágenes estructurales y 576 mapas de campo. Los mapas de campo solo se conservan si la persona tiene fMRI, dMRI o ASL.
+- La dMRI se considera una técnica propia y se conserva.
+
 ## Método
 
 1. **Inventario.** Inventario BIDS de los 1.821 datasets: clon git sin datos de los espejos OpenNeuroDatasets.
@@ -51,23 +62,24 @@ Anotación clínica de **todos los participantes con datos** en los **1.821 data
 
 ## Resultados principales
 
-- **89.243 personas únicas** contadas.
-  - 45.718 con dos o más modalidades.
-  - 1.619 con dos o más modalidades funcionales: PET+fMRI 722, EEG+fMRI 671, fMRI+fNIRS 70, EEG+MEG 45…
+- **84.267 personas únicas** contadas tras la regla de MRI estructural.
+  - 45.365 conservan su MRI estructural porque tienen otra técnica.
+  - 45.718 tienen dos o más modalidades.
+  - 1.619 tienen dos o más modalidades funcionales: PET+fMRI 722, EEG+fMRI 671, fMRI+fNIRS 70, EEG+MEG 45…
 - **Condiciones con más personas únicas** (mínimo–máximo):
 
 | Condición | Personas | Detalle |
 |---|---|---|
-| Epilepsia | 1.673–2.432 | +442 en IDEAS sin grupo por persona; casi todas con iEEG |
-| Ictus | 1.557 | |
-| Párkinson | 646–1.029 | EEG hasta 789, MRI 220 |
-| Glioblastoma | 381 | |
-| TDAH | 258–263 | |
+| Epilepsia | 1.550–2.309 | casi todas con iEEG (hasta 1.670) |
+| Ictus | 1.446 | MRI con difusión o fMRI |
+| Párkinson | 605–988 | EEG hasta 789, fMRI 179 |
+| TDAH | 257–262 | |
+| Neuralgia del trigémino | 236 | |
 | Esquizofrenia | 195 | |
 | Ansiedad | 194–197 | |
 | TCE | 187 | |
 | Autismo | 172–223 | |
-| Depresión mayor | 157–186 | |
+| Depresión mayor | 119–141 | |
 
 ## Verificación
 
@@ -79,5 +91,5 @@ Anotación clínica de **todos los participantes con datos** en los **1.821 data
 
 - "presumed_healthy" es una presunción.
 - Muchos estudios clínicos clásicos (ABIDE, ADHD-200, COBRE, PPMI, ADNI) no están en OpenNeuro. Se cubrirán en la fase de fuentes externas.
-- 3.148 personas `unresolved`: el grupo existe, pero no es público por participante. Por ejemplo, IDEAS tiene 442 pacientes con epilepsia y 100 controles en figshare.
+- 2.221 personas `unresolved`: el grupo existe, pero no es público por participante. Por ejemplo, IDEAS II (314 personas con difusión) mezcla epilepsia y controles; la lista está en figshare.
 - Los duplicados re-convertidos (archivos distintos, mismas personas) solo se detectan si coinciden los metadatos.
