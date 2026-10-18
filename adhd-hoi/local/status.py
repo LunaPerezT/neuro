@@ -21,7 +21,7 @@ def main():
     key = S.dataset_id + "/" + S.subject
     S = S.assign(
         uploaded=[k in up or src != "brainlife_upload" for k, src in zip(key, S.source)],
-        fmriprep_ready=[src == "xcpd_openneuro" or b in idx for src, b in zip(S.source, S.brainlife_subject)],
+        fmriprep_ready=[b in idx for b in S.brainlife_subject],
         analysed=[k in pr for k in key],
         failed=[k in pr.done and pr.done[k]["status"] == "error" for k in key],
         qc_pass=[bool(pr.done.get(k, {}).get("qc_pass")) for k in key],

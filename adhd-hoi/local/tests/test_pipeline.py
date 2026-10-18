@@ -119,3 +119,36 @@ def test_optimal_combination(tmp_path):
     w = np.array([e * np.exp(-e / t2s) for e in te]); w /= w.sum()
     expected = (w * s0 * np.exp(-np.array(te) / t2s)).sum()
     assert np.allclose(oc, expected, rtol=1e-4)
+
+
+def test_stage_person_phasediff_and_relabel(cfg, tmp_path, monkeypatch):
+    import stage_upload as SU
+    ds, sub, nb = "dsX", "102041", "NB0000001"
+    base = f"sub-{sub}/ses-1"
+    rows = [
+        ("t1w", f"{base}/anat/sub-{sub}_ses-1_rec-refaced_T1w.nii.gz"),
+        ("bold", f"{base}/func/sub-{sub}_ses-1_task-rest_acq-multiband_bold.nii.gz"),
+        ("fmap", f"{base}/fmap/sub-{sub}_ses-1_acq-X_phasediff.nii.gz"),
+        ("fmap", f"{base}/fmap/sub-{sub}_ses-1_acq-X_magnitude1.nii.gz"),
+        ("fmap", f"{base}/fmap/sub-{sub}_ses-1_acq-X_magnitude2.nii.gz"),
+    ]
+    F = pd.DataFrame([{"dataset_id": ds, "subject": sub, "repo": ds, "path": p, "role": r, "bytes": 0} for r, p in rows])
+    side = {(ds, rows[1][1]): {"RepetitionTime": 0.5, "B0FieldSource": "fMRI"},
+            (ds, rows[2][1]): {"EchoTime1": 0.004, "EchoTime2": 0.0066, "IntendedFor": ["old"], "B0FieldIdentifier": "fMRI"}}
+
+    def fake_download(url, dest, expected_bytes=0, tries=5):
+        dest.parent.mkdir(parents=True, exist_ok=True); dest.write_bytes(b"x"); return dest
+    monkeypatch.setattr(SU, "download", fake_download)
+    row = SimpleNamespace(dataset_id=ds, subject=sub, brainlife_subject=nb)
+    root = tmp_path / "batch"
+    SU.stage_person(cfg, row, F, side, root)
+    names = sorted(str(p.relative_to(root)) for p in root.rglob("*") if p.is_file())
+    assert names == sorted([f"sub-{nb}/anat/sub-{nb}_T1w.json", f"sub-{nb}/anat/sub-{nb}_T1w.nii.gz",
+                            f"sub-{nb}/func/sub-{nb}_task-rest_bold.json", f"sub-{nb}/func/sub-{nb}_task-rest_bold.nii.gz",
+                            f"sub-{nb}/fmap/sub-{nb}_phasediff.json", f"sub-{nb}/fmap/sub-{nb}_phasediff.nii.gz",
+                            f"sub-{nb}/fmap/sub-{nb}_magnitude1.json", f"sub-{nb}/fmap/sub-{nb}_magnitude1.nii.gz",
+                            f"sub-{nb}/fmap/sub-{nb}_magnitude2.json", f"sub-{nb}/fmap/sub-{nb}_magnitude2.nii.gz"])
+    pd_meta = json.loads((root / f"sub-{nb}/fmap/sub-{nb}_phasediff.json").read_text())
+    assert pd_meta["IntendedFor"] == f"func/sub-{nb}_task-rest_bold.nii.gz" and "B0FieldIdentifier" not in pd_meta
+    b = json.loads((root / f"sub-{nb}/func/sub-{nb}_task-rest_bold.json").read_text())
+    assert b["RepetitionTime"] == 0.5 and "B0FieldSource" not in b and b["TaskName"] == "rest"

@@ -21,7 +21,7 @@ MIRRORS = Path("/tmp/claude-0/sz")          # blob:none clones of OpenNeuroDatas
 DERIV = Path("/tmp/claude-0/deriv")         # blob:none clones of derivative datasets
 OUT = Path(__file__).parent / "data"
 DATASETS = ["ds000030", "ds005754", "ds007116", "ds007182", "ds008579"]
-XCPD = {"ds008579": "ds008601"}             # datasets whose XCP-D parcellated series already exist on OpenNeuro
+XCPD = {"ds008579": "ds008601"}             # authors' XCP-D series on OpenNeuro: used only as a benchmark
 BRAINLIFE_MIRRORED = {"ds000030"}           # importable directly from brainlife.io/datasets
 TARGET = "ADHD"
 sys.path.insert(0, str(ROOT / "pheno"))
@@ -179,13 +179,9 @@ def main():
                 continue
             ses = ses_of(bold)
             t1 = pick_t1(paths, ses)
-            fmap = pick_fmap(ds_dir, paths, bold, ses) if ds in ("ds007116", "ds007182") else []
-            if ds in XCPD:
-                source = "xcpd_openneuro"
-            elif ds in BRAINLIFE_MIRRORED:
-                source = "brainlife_import"
-            else:
-                source = "brainlife_upload"
+            fmap = pick_fmap(ds_dir, paths, bold, ses) if ds in ("ds007116", "ds007182", "ds008579") else []
+            # every study goes through the same pipeline (FreeSurfer + fMRIPrep on brainlife)
+            source = "brainlife_import" if ds in BRAINLIFE_MIRRORED else "brainlife_upload"
             bmeta = merged_sidecar(ds_dir, tree, bold)
             row = {
                 "tr": bmeta.get("RepetitionTime", ""),
@@ -196,28 +192,24 @@ def main():
                 "n_echoes": len(bolds), "has_fmap": bool(fmap), "source": source,
                 "priority": 1 if group in ("ADHD", "control") else 2,
             }
-            if source == "xcpd_openneuro":
-                stem = Path(bold).name.split("_bold")[0]
-                # XCP-D keeps entity order sub_ses_task_acq[_run]; match on subject+session+task-rest+multiband
+            for role, plist in (("t1w", [t1] if t1 else []), ("bold", bolds), ("fmap", fmap)):
+                for p in plist:
+                    files.append({"dataset_id": ds, "subject": r.subject, "repo": ds, "path": p, "role": role,
+                                  "bytes": annex_size(ds_dir, p)})
+                    side = p.replace(".nii.gz", ".json")
+                    if role != "fmap" and side in paths:
+                        files.append({"dataset_id": ds, "subject": r.subject, "repo": ds, "path": side,
+                                      "role": role + "_json", "bytes": 0})
+            # authors' own XCP-D series, kept only as an external benchmark of our denoising
+            if ds in XCPD:
                 pre = f"sub-{r.subject}/ses-{ses}/func/" if ses else f"sub-{r.subject}/func/"
                 want = [p for p in xcpd_tree if p.startswith(pre) and "task-rest" in p and "acq-multiband" in p and (
                     p.endswith("_motion.tsv") or p.endswith("_desc-linc_qc.tsv")
                     or re.search(r"_seg-(4S456Parcels|Tian)_stat-mean_timeseries\.tsv$", p))]
-                if not any("4S456Parcels" in p for p in want):
-                    continue
-                row["n_xcpd_runs"] = len({re.sub(r"_(motion|space|seg).*", "", p) for p in want})
+                row["has_xcpd_benchmark"] = any("4S456Parcels" in p for p in want)
                 for p in want:
                     files.append({"dataset_id": ds, "subject": r.subject, "repo": XCPD[ds], "path": p,
                                   "role": "xcpd", "bytes": annex_size(DERIV / XCPD[ds], p)})
-            else:
-                for role, plist in (("t1w", [t1] if t1 else []), ("bold", bolds), ("fmap", fmap)):
-                    for p in plist:
-                        files.append({"dataset_id": ds, "subject": r.subject, "repo": ds, "path": p, "role": role,
-                                      "bytes": annex_size(ds_dir, p)})
-                        side = p.replace(".nii.gz", ".json")
-                        if role != "fmap" and side in paths:
-                            files.append({"dataset_id": ds, "subject": r.subject, "repo": ds, "path": side,
-                                          "role": role + "_json", "bytes": 0})
             subjects.append(row)
         for p in top:
             files.append({"dataset_id": ds, "subject": "", "repo": ds, "path": p, "role": "top_level", "bytes": 0})
@@ -228,7 +220,7 @@ def main():
         if rows:
             pd.DataFrame(rows).to_csv(OUT / f"phenotype_{ds}.csv", index=False)
     S = pd.DataFrame(subjects)
-    S["has_t1w"] = S.apply(lambda r: r.source == "xcpd_openneuro" or any(
+    S["has_t1w"] = S.apply(lambda r: any(
         f["role"] == "t1w" and f["dataset_id"] == r.dataset_id and f["subject"] == r.subject for f in files), axis=1)
     S.loc[~S.has_t1w, "priority"] = 0          # cannot be preprocessed
     # label used on brainlife: original ID for the dataset imported there, global person ID for uploads
@@ -237,7 +229,7 @@ def main():
     F = pd.DataFrame(files)
     S.to_csv(OUT / "subjects.csv", index=False)
     F.to_csv(OUT / "files.csv", index=False)
-    gb = F.groupby(["dataset_id", "subject"]).bytes.sum() / 1e9
+    gb = F[F.role != "xcpd"].groupby(["dataset_id", "subject"]).bytes.sum() / 1e9
     S = S.merge(gb.rename("gb").reset_index(), on=["dataset_id", "subject"], how="left")
     print(S.groupby(["dataset_id", "source", "group"]).agg(n=("subject", "size"), gb=("gb", "sum"), max_gb=("gb", "max")).round(2))
     print("priority-1 people:", (S.priority == 1).sum(), "| GB to stage (priority 1):", round(S[S.priority == 1].gb.sum(), 1))

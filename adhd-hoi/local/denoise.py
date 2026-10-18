@@ -70,12 +70,21 @@ def parcellate(bold_path: Path, mask_path: Path | None, atlas: np.ndarray, affin
     lab = atlas.ravel()
     inmask = np.ones_like(lab, bool) if mask_path is None else (np.asarray(nib.load(str(mask_path)).dataobj).ravel() > 0)
     vox = np.where(lab > 0)[0]
-    data = np.asarray(img.dataobj, dtype=np.float32).reshape(-1, img.shape[3])[vox]      # V x T
+    T = img.shape[3]
+    data = np.empty((len(vox), T), np.float32)                       # V x T, read in chunks to bound RAM
+    for t0 in range(0, T, 100):
+        chunk = np.asarray(img.dataobj[..., t0:t0 + 100], dtype=np.float32)
+        data[:, t0:t0 + chunk.shape[3]] = chunk.reshape(-1, chunk.shape[3])[vox]
+        del chunk
     good = inmask[vox] & np.isfinite(data).all(1) & (data.std(1) > 0)
+    lv = lab[vox][good] - 1
     n_all = np.bincount(lab[vox], minlength=451)[1:]
-    n_ok = np.bincount(lab[vox][good], minlength=451)[1:]
-    sums = np.zeros((450, data.shape[1]), np.float64)
-    np.add.at(sums, lab[vox][good] - 1, data[good])
+    n_ok = np.bincount(lv + 1, minlength=451)[1:]
+    order = np.argsort(lv, kind="stable")                            # region sums via sorted reduceat
+    lv_s, dg = lv[order], data[good][order]
+    starts = np.r_[0, np.flatnonzero(np.diff(lv_s)) + 1]
+    sums = np.zeros((450, T), np.float64)
+    sums[lv_s[starts]] = np.add.reduceat(dg, starts, axis=0)
     with np.errstate(invalid="ignore", divide="ignore"):
         ts = (sums / n_ok[:, None]).T
     coverage = n_ok / np.maximum(n_all, 1)

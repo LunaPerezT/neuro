@@ -1,7 +1,7 @@
 """Stage a few people at a time from OpenNeuro and upload them to the brainlife project, then delete them.
 
 Only the files fMRIPrep needs are downloaded: one T1w, the first resting-state run and its fieldmap
-(about 0.15-0.3 GB per person). People are relabelled with their global person ID (NB...), so the five
+(about 0.15-0.6 GB per person). People are relabelled with their global person ID (NB...), so the five
 studies can share one brainlife project without ID clashes. Re-running skips everyone already uploaded.
 
     python stage_upload.py                # all pending people (priority from config.json)
@@ -92,9 +92,13 @@ def stage_person(cfg, row, F, sidecars, root: Path):
 
     for p in sorted(x for x in mine[mine.role == "fmap"].path if x.endswith(".nii.gz")):
         m = side(p, drop=SKIP_KEYS)
-        direc = {"j": "PA", "j-": "AP", "i": "LR", "i-": "RL"}.get(m.get("PhaseEncodingDirection", ""), "X")
         m["IntendedFor"] = f"func/sub-{nb}_task-rest_bold.nii.gz"
-        name = f"sub-{nb}_dir-{direc}_epi"
+        suffix = Path(p).name[: -len(".nii.gz")].rsplit("_", 1)[-1]     # epi, phasediff, magnitude1/2, fieldmap...
+        if suffix == "epi":
+            direc = {"j": "PA", "j-": "AP", "i": "LR", "i-": "RL"}.get(m.get("PhaseEncodingDirection", ""), "X")
+            name = f"sub-{nb}_dir-{direc}_epi"
+        else:
+            name = f"sub-{nb}_{suffix}"
         shutil.move(got[p], sdir / "fmap" / f"{name}.nii.gz")
         (sdir / "fmap" / f"{name}.json").write_text(json.dumps(m, indent=1))
     shutil.rmtree(raw, ignore_errors=True)

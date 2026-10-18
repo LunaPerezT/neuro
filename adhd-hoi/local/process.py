@@ -1,10 +1,11 @@
 """Per person: fetch preprocessed data -> parcellate + denoise -> censor -> common TR -> HOI metrics -> save
 small results -> delete the downloads. Resumable: people already done are skipped.
 
-Sources
-  * brainlife (ds000030, ds005754, ds007116, ds007182): fMRIPrep outputs of the project (bold in
-    MNI152NLin6Asym 2 mm + confounds + mask), downloaded with the brainlife CLI.
-  * XCP-D on OpenNeuro (ds008579 GRMPY -> ds008601): parcellated series + motion, a few MB per person.
+Every study is preprocessed the same way (FreeSurfer 7.1.1 + fMRIPrep 20.2.3 on brainlife, bold in
+MNI152NLin6Asym 2 mm + confounds + mask) and denoised here with the same code.
+
+--xcpd-benchmark additionally analyses the GRMPY authors' own XCP-D series (ds008601, fMRIPrep 25 + XCP-D
+linc, fsLR) into results/xcpd_benchmark/: an external check that our denoising gives the same connectome.
 
     python process.py                    # everyone available now; run again later for the rest
     python process.py --dataset ds008579 --limit 5
@@ -140,6 +141,30 @@ def analyse(cfg, row, ts, fd, tr, coverage, extra, atlas, outdir: Path):
     return summary
 
 
+def run_benchmark(cfg, S, F, atlas):
+    """Authors' XCP-D series for GRMPY -> same censoring/TR/metrics -> results/xcpd_benchmark/."""
+    st = State(cfg, "xcpd_benchmark")
+    have = set(F[F.role == "xcpd"].subject)
+    csv = cfg["workdir"] / "results" / "xcpd_benchmark" / "summary.csv"
+    for _, row in S[S.subject.isin(have) & S.dataset_id.isin(F[F.role == "xcpd"].dataset_id)].iterrows():
+        key = f"{row.dataset_id}/{row.subject}"
+        if key in st:
+            continue
+        tmp = cfg["workdir"] / "tmp" / f"xcpd_{row.subject}"
+        try:
+            ts, fd, tr, cov, extra = run_xcpd(cfg, row, F, tmp, atlas)
+            out = cfg["workdir"] / "results" / "xcpd_benchmark" / row.dataset_id / f"sub-{row.subject}"
+            summ = analyse(cfg, row, ts, fd, tr, cov, extra, atlas, out)
+            pd.DataFrame([summ]).to_csv(csv, mode="a", header=not csv.exists(), index=False)
+            st.mark(key)
+            print(f"xcpd {key}")
+        except Exception as e:
+            st.mark(key, "error", error=str(e)[:500])
+            print(f"xcpd FAIL {key}: {e}")
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+
 def _expand(v, ok):
     out = np.full(len(ok), np.nan, dtype=float)
     out[ok] = v
@@ -159,6 +184,7 @@ def main():
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--refresh", action="store_true")
     ap.add_argument("--keep-downloads", action="store_true")
+    ap.add_argument("--xcpd-benchmark", action="store_true", help="also analyse the authors' XCP-D series of GRMPY")
     a = ap.parse_args()
     cfg = load_config(a.config)
     S = subjects(cfg)
@@ -167,8 +193,10 @@ def main():
     F = files(cfg)
     st = State(cfg, "process")
     atlas = D.load_atlas(cfg["workdir"] / "atlas")
+    if a.xcpd_benchmark:
+        run_benchmark(cfg, S, F, atlas)
     index = {}
-    if (S.source != "xcpd_openneuro").any() and cfg["brainlife_project"]:
+    if cfg["brainlife_project"]:
         index = brainlife_index(cfg, a.refresh)
     done = waiting = failed = 0
     summary_csv = cfg["workdir"] / "results" / "summary.csv"
@@ -178,19 +206,16 @@ def main():
             continue
         if a.limit and done >= a.limit:
             break
-        if row.source != "xcpd_openneuro" and row.brainlife_subject not in index:
+        if row.brainlife_subject not in index:
             waiting += 1
             continue
         tmp = cfg["workdir"] / "tmp" / f"{row.dataset_id}_{row.subject}"
         outdir = cfg["workdir"] / "results" / row.dataset_id / f"sub-{row.subject}"
         t0 = time.time()
         try:
-            if row.source == "xcpd_openneuro":
-                ts, fd, tr, cov, extra = run_xcpd(cfg, row, F, tmp, atlas)
-            else:
-                paths = fetch_brainlife(cfg, index[row.brainlife_subject], tmp)
-                ts, fd, tr, cov, extra = run_volume(cfg, row, paths, atlas)
-                extra["brainlife_bold_id"] = index[row.brainlife_subject]["bold"]["_id"]
+            paths = fetch_brainlife(cfg, index[row.brainlife_subject], tmp)
+            ts, fd, tr, cov, extra = run_volume(cfg, row, paths, atlas)
+            extra["brainlife_bold_id"] = index[row.brainlife_subject]["bold"]["_id"]
             summ = analyse(cfg, row, ts, fd, tr, cov, extra, atlas, outdir)
             summ["seconds"] = round(time.time() - t0)
             pd.DataFrame([summ]).to_csv(summary_csv, mode="a", header=not summary_csv.exists(), index=False)
