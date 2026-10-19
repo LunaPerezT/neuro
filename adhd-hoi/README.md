@@ -75,7 +75,7 @@ La herramienta de brainlife (`bl`) solo funciona en Linux. En Windows se usa WSL
 
    - Cada persona se sube con su ID global (`NB…`) para que los estudios no choquen.
    - Se suben solo el T1w, la primera sesión de reposo y su mapa de campo (Penn LEAD y PRIMAS: EPI de fase inversa; GRMPY: *phasediff* + magnitudes).
-   - En ds005754 los 3 ecos se combinan antes de subir (combinación óptima ponderada por T2*). Si prefieres solo el eco medio, usa `"multiecho": "echo2"`.
+   - En ds005754 los 3 ecos se combinan antes de subir (combinación óptima ponderada por T2*). Sus JSON dan el mismo TE (42,2 ms) a los tres ecos, que es un error del dataset; se usan los TE del README: 14,8/28,4/42,0 ms. Si prefieres solo el eco medio, usa `"multiecho": "echo2"`.
 
 ## Paso 3 · Reglas de pipeline en brainlife (web, una vez)
 

@@ -152,3 +152,12 @@ def test_stage_person_phasediff_and_relabel(cfg, tmp_path, monkeypatch):
     assert pd_meta["IntendedFor"] == f"func/sub-{nb}_task-rest_bold.nii.gz" and "B0FieldIdentifier" not in pd_meta
     b = json.loads((root / f"sub-{nb}/func/sub-{nb}_task-rest_bold.json").read_text())
     assert b["RepetitionTime"] == 0.5 and "B0FieldSource" not in b and b["TaskName"] == "rest"
+
+
+def test_echo_times_override():
+    import stage_upload as SU
+    bad = [{"EchoTime": 0.0422}] * 3
+    assert SU.echo_times("ds005754", bad) == [0.0148, 0.0284, 0.0420]
+    assert SU.echo_times("dsX", [{"EchoTime": 0.01}, {"EchoTime": 0.03}]) == [0.01, 0.03]
+    with pytest.raises(ValueError):
+        SU.echo_times("dsX", bad)

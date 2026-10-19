@@ -22,6 +22,17 @@ import numpy as np
 from common import REPO, State, bl, download, files, free_gb, load_config, openneuro_url, subjects
 
 SKIP_KEYS = {"IntendedFor", "B0FieldIdentifier", "B0FieldSource"}
+# ds005754's sidecars give EchoTime=0.0422 for all three echoes; the true values are in its README
+ECHO_TIMES = {"ds005754": [0.0148, 0.0284, 0.0420]}
+
+
+def echo_times(ds, metas):
+    tes = [float(m["EchoTime"]) for m in metas]
+    if len(set(tes)) < len(tes):
+        if ds not in ECHO_TIMES:
+            raise ValueError(f"{ds}: identical EchoTime in every echo sidecar and no override")
+        tes = ECHO_TIMES[ds]
+    return tes
 
 
 def load_sidecars():
@@ -77,13 +88,13 @@ def stage_person(cfg, row, F, sidecars, root: Path):
     bolds = sorted(p for p in mine[mine.role == "bold"].path if p.endswith(".nii.gz"))
     bold_out = sdir / "func" / f"sub-{nb}_task-rest_bold.nii.gz"
     if len(bolds) > 1:
-        tes = [float(side(b)["EchoTime"]) for b in bolds]
+        tes = echo_times(ds, [side(b) for b in bolds])
         if cfg["multiecho"] == "oc":
             optimal_combination([got[b] for b in bolds], tes, bold_out)
             meta = side(bolds[1], {"MultiEchoCombination": f"T2*-weighted optimal combination of TE={tes}"}, drop={"EchoTime"} | SKIP_KEYS)
         else:
             shutil.move(got[bolds[1]], bold_out)
-            meta = side(bolds[1], {"EchoNote": "middle echo only"}, drop=SKIP_KEYS)
+            meta = side(bolds[1], {"EchoTime": tes[1], "EchoNote": "middle echo only"}, drop=SKIP_KEYS)
     else:
         shutil.move(got[bolds[0]], bold_out)
         meta = side(bolds[0], drop=SKIP_KEYS)
